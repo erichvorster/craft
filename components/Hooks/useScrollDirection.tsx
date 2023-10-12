@@ -2,7 +2,7 @@ import React from "react";
 
 // Scroll direction hook
 function useScrollDirection() {
-  const [scrollDirection, setScrollDirection] = React.useState(null);
+  const [scrollDirection, setScrollDirection] = React.useState("");
 
   React.useEffect(() => {
     let lastScrollY = window.pageYOffset;

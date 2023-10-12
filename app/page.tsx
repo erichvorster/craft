@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Nav from "@/components/Nav";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -9,17 +9,41 @@ import CategoryNav from "@/components/CategoryNav";
 import useScrollDirection from "@/components/Hooks/useScrollDirection";
 
 export default function Home() {
+  const [scrolledToTop, setScrolledToTop] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        setScrolledToTop(true);
+      } else {
+        setScrolledToTop(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   const items = [1, 2, 3, 4, 5];
   const scrollDirection = useScrollDirection();
   console.log(scrollDirection);
+
   return (
     <main className="min-h-screen px-2 py-2">
       <div className="mt-4">
-        <Tabs defaultValue="account" className="w-full">
+        <Tabs defaultValue="account" className="w-full ">
           <div
             className={`fixed top-0 left-0 right-0 z-10 bg-white p-4 ${
               scrollDirection === "down" ? "-translate-y-16" : "translate-y-0"
-            } transition-transform duration-200`}
+            } transition-transform duration-200 ${
+              scrolledToTop
+                ? ""
+                : "box-shadow transition-shadow duration-200 ease-in-out"
+            }`}
           >
             <Nav />
             <TabsList className="w-full">

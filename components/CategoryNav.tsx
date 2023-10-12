@@ -19,7 +19,7 @@ const CategoryNav = () => {
     "KIDIES",
   ];
   return (
-    <div className="overflow-hidden w-full h-full mt-4">
+    <div className="overflow-hidden w-full h-full mt-4 ">
       <div className="overflow-x-scroll flex w-full h-full scrollbar-none">
         {tabs.map((tab, index) => (
           <div
