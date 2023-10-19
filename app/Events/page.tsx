@@ -7,12 +7,14 @@ const page = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
 
   return (
-    <Calendar
-      mode="single"
-      selected={date}
-      onSelect={setDate}
-      className="rounded-md border"
-    />
+    <div className="mx-auto w-11/12 mt-12">
+      <Calendar
+        mode="single"
+        selected={date}
+        onSelect={setDate}
+        className="rounded-md border"
+      />
+    </div>
   );
 };
 

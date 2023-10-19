@@ -16,6 +16,7 @@ import {
   User,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 const Nav = () => {
   const [activeTab, setActiveTab] = useState(1);
 
@@ -63,57 +64,69 @@ const Nav = () => {
                       Menu
                     </p>
                   </li>
-                  <li
-                    onClick={() => setActiveTab(2)}
-                    className={`text-primary text-xl flex items-center p-2 rounded-md cursor-pointer ${
-                      activeTab === 2 && "bg-yellow-300/25 "
-                    }`}
-                  >
-                    <div
-                      className={`p-2 rounded-full mr-2 ${
-                        activeTab == 2 && "bg-yellow-500/75"
+                  <Link href="/Specials">
+                    <li
+                      onClick={() => setActiveTab(2)}
+                      className={`text-primary text-xl flex items-center p-2 rounded-md cursor-pointer ${
+                        activeTab === 2 && "bg-yellow-300/25 "
                       }`}
                     >
-                      <Gem color="#0D061D" size={22} />
-                    </div>
-                    <p className={`${activeTab === 2 && "text-yellow-800/75"}`}>
-                      Specials
-                    </p>
-                  </li>
-                  <li
-                    onClick={() => setActiveTab(3)}
-                    className={`text-primary text-xl flex items-center p-2 rounded-md cursor-pointer ${
-                      activeTab === 3 && "bg-yellow-300/25 "
-                    }`}
-                  >
-                    <div
-                      className={`p-2 rounded-full mr-2 ${
-                        activeTab == 3 && "bg-yellow-500/75"
+                      <div
+                        className={`p-2 rounded-full mr-2 ${
+                          activeTab == 2 && "bg-yellow-500/75"
+                        }`}
+                      >
+                        <Gem color="#0D061D" size={22} />
+                      </div>
+                      <p
+                        className={`${activeTab === 2 && "text-yellow-800/75"}`}
+                      >
+                        Specials
+                      </p>
+                    </li>
+                  </Link>
+                  <Link href="/Events">
+                    <li
+                      onClick={() => setActiveTab(3)}
+                      className={`text-primary text-xl flex items-center p-2 rounded-md cursor-pointer ${
+                        activeTab === 3 && "bg-yellow-300/25 "
                       }`}
                     >
-                      <CalendarRange color="#0D061D" size={22} />
-                    </div>
-                    <p className={`${activeTab === 3 && "text-yellow-800/75"}`}>
-                      Events
-                    </p>
-                  </li>
-                  <li
-                    onClick={() => setActiveTab(4)}
-                    className={`text-primary text-xl flex items-center p-2 rounded-md cursor-pointer ${
-                      activeTab === 4 && "bg-yellow-300/25 "
-                    }`}
-                  >
-                    <div
-                      className={`p-2 rounded-full mr-2 ${
-                        activeTab == 4 && "bg-yellow-500/75"
+                      <div
+                        className={`p-2 rounded-full mr-2 ${
+                          activeTab == 3 && "bg-yellow-500/75"
+                        }`}
+                      >
+                        <CalendarRange color="#0D061D" size={22} />
+                      </div>
+                      <p
+                        className={`${activeTab === 3 && "text-yellow-800/75"}`}
+                      >
+                        Events
+                      </p>
+                    </li>
+                  </Link>
+                  <Link href="/Bookings">
+                    <li
+                      onClick={() => setActiveTab(4)}
+                      className={`text-primary text-xl flex items-center p-2 rounded-md cursor-pointer ${
+                        activeTab === 4 && "bg-yellow-300/25 "
                       }`}
                     >
-                      <BookOpenCheck color="#0D061D" size={22} />
-                    </div>
-                    <p className={`${activeTab === 4 && "text-yellow-800/75"}`}>
-                      Bookings
-                    </p>
-                  </li>
+                      <div
+                        className={`p-2 rounded-full mr-2 ${
+                          activeTab == 4 && "bg-yellow-500/75"
+                        }`}
+                      >
+                        <BookOpenCheck color="#0D061D" size={22} />
+                      </div>
+                      <p
+                        className={`${activeTab === 4 && "text-yellow-800/75"}`}
+                      >
+                        Bookings
+                      </p>
+                    </li>
+                  </Link>
                 </ul>
               </div>
 
