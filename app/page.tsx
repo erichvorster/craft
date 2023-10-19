@@ -62,7 +62,9 @@ export default function Home() {
         <Tabs defaultValue="account" className="w-full ">
           <div
             className={`fixed z-0 top-0 left-0 right-0  bg-white p-4 ${
-              scrollDirection === "down" ? "-translate-y-16" : "translate-y-0"
+              scrollDirection === "down"
+                ? "-translate-y-[120px]"
+                : "translate-y-0"
             } ${
               scrolledToTop
                 ? ""
@@ -76,14 +78,14 @@ export default function Home() {
                 className="w-full"
                 onClick={() => setIsFood(true)}
               >
-                Food
+                FOOD
               </TabsTrigger>
               <TabsTrigger
                 value="password"
                 className="w-full"
                 onClick={() => setIsFood(false)}
               >
-                Drinks
+                DRINKS
               </TabsTrigger>
             </TabsList>
             <CategoryNav
@@ -93,27 +95,11 @@ export default function Home() {
             />
           </div>
           <TabsContent value="account">
-            {/* <motion.div className="carousel">
-              <motion.div className="inner-carousel">
-                {items.map((item) => (
-                  <motion.div
-                    className="carousel-item h-44 w-72 bg-primary rounded-md mr-4"
-                    key={item}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                  ></motion.div>
-                ))}
-              </motion.div>
-            </motion.div> */}
-
             {(activeTab === 1 || activeTab === 2) && <Brunch />}
             {(activeTab === 1 || activeTab === 3) && <Snacks />}
             {(activeTab === 1 || activeTab === 4) && <Bowls />}
             {(activeTab === 1 || activeTab === 5) && <Sandwhiches />}
           </TabsContent>
-
-          <TabsContent value="password">Change your password here.</TabsContent>
         </Tabs>
       </div>
     </main>
