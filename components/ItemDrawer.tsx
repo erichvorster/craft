@@ -68,7 +68,7 @@ export function ItemDrawer({ children }: ItemDrawerProps) {
                 voluptatum. Impedit, maiores?
               </div>
             </div>
-            <div className="p-4 bg-zinc-100 border-t border-zinc-200 mt-auto">
+            {/* <div className="p-4 bg-zinc-100 border-t border-zinc-200 mt-auto">
               <div className="flex gap-6 justify-end max-w-md mx-auto">
                 <a
                   className="text-xs text-zinc-600 flex items-center gap-0.25"
@@ -117,7 +117,7 @@ export function ItemDrawer({ children }: ItemDrawerProps) {
                   </svg>
                 </a>
               </div>
-            </div>
+            </div> */}
           </Drawer.Content>
         </Drawer.Portal>
       </Drawer.Root>
