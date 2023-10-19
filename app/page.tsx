@@ -61,7 +61,7 @@ export default function Home() {
       <div className="mt-4">
         <Tabs defaultValue="account" className="w-full ">
           <div
-            className={`fixed top-0 left-0 right-0 z-10 bg-white p-4 ${
+            className={`fixed z-0 top-0 left-0 right-0  bg-white p-4 ${
               scrollDirection === "down" ? "-translate-y-16" : "translate-y-0"
             } ${
               scrolledToTop
