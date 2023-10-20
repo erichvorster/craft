@@ -31,7 +31,7 @@ const Carousel = () => {
             return (
               <motion.div
                 key={index}
-                className="min-w-[20rem] min-h-[25rem] bg-yellow-500/75 m-4 rounded-lg -z-20 relative"
+                className="min-w-[13rem] min-h-[18rem] bg-yellow-500/75 m-4 rounded-lg -z-20 relative"
               >
                 <Image
                   src={Burger}
@@ -39,8 +39,8 @@ const Carousel = () => {
                   className="rounded-lg -z-30"
                   layout="responsive"
                   style={{
-                    width: "20rem",
-                    height: "25rem",
+                    width: "13rem",
+                    height: "18rem",
                     pointerEvents: "none",
                   }}
                 />
