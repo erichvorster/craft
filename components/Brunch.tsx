@@ -5,7 +5,7 @@ import { ItemDrawer } from "./ItemDrawer";
 const Brunch = () => {
   const items = [1, 2, 3, 4, 5];
   return (
-    <div className="mt-72">
+    <div className="mt-18">
       <CategoryHeader
         headerText={"BRUNCH"}
         subText={"ONLY AVAILABLE BETWEEN 10:30 AND 13:00"}
