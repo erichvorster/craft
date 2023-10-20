@@ -14,6 +14,7 @@ import Bowls from "@/components/Bowls";
 import Brunch from "@/components/Brunch";
 import Sandwhiches from "@/components/Sandwhiches";
 import { ItemDrawer } from "@/components/ItemDrawer";
+import Carousel from "@/components/Carousel";
 
 export default function Home() {
   const [scrolledToTop, setScrolledToTop] = useState(true);
@@ -61,7 +62,7 @@ export default function Home() {
       <div className="mt-4">
         <Tabs defaultValue="account" className="w-full ">
           <div
-            className={`fixed z-0 top-0 left-0 right-0  bg-white p-4 ${
+            className={`fixed z-10 top-0 left-0 right-0  bg-white p-4 ${
               scrollDirection === "down"
                 ? "-translate-y-[120px]"
                 : "translate-y-0"
@@ -95,6 +96,7 @@ export default function Home() {
             />
           </div>
           <TabsContent value="account">
+            <Carousel />
             {(activeTab === 1 || activeTab === 2) && <Brunch />}
             {(activeTab === 1 || activeTab === 3) && <Snacks />}
             {(activeTab === 1 || activeTab === 4) && <Bowls />}
