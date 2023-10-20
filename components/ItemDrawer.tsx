@@ -8,11 +8,16 @@ type ItemDrawerProps = {
 };
 
 export function ItemDrawer({ children }: ItemDrawerProps) {
+  const handleDrawerOpen = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    window.scrollBy(0, 1);
+  };
   return (
     <div className="z-10">
       <Drawer.Root>
         <Drawer.Trigger asChild>
-          <button>
+          <button onClick={handleDrawerOpen}>
             <>{children}</>
           </button>
         </Drawer.Trigger>
