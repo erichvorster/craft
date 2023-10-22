@@ -9,22 +9,22 @@ type ItemDrawerProps = {
 
 export function ItemDrawer({ children }: ItemDrawerProps) {
   const handleDrawerOpen = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-
-    window.scrollBy(0, 1);
+    window.scrollBy(0, -20);
+    console.log("clicked");
   };
+
   return (
     <div className="z-10">
       <Drawer.Root>
         <Drawer.Trigger asChild>
           <button onClick={handleDrawerOpen}>
-            <>{children}</>
+            <div>{children}</div>
           </button>
         </Drawer.Trigger>
         <Drawer.Portal>
-          <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-          <Drawer.Content className="bg-zinc-100 flex flex-col rounded-t-[10px] mt-24 fixed bottom-0 left-0 right-0">
-            <div className="p-4 bg-white rounded-t-[10px] flex-1 overflow-y-auto max-h-[600px]">
+          <Drawer.Overlay className="fixed inset-0 bg-black/40 z-40" />
+          <Drawer.Content className="bg-zinc-100 flex flex-col rounded-t-[10px] mt-24 fixed bottom-0 left-0 right-0 z-50">
+            <div className="p-4 bg-white rounded-t-[10px] flex-1  max-h-[600px] ">
               <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-300 mb-8" />
               <div className="h-64 w-full bg-primary rounded-lg relative"></div>
               <div className="flex justify-between items-center mt-8">
