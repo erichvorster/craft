@@ -5,24 +5,20 @@ function useScrollDirection() {
   const [scrollDirection, setScrollDirection] = React.useState("");
 
   React.useEffect(() => {
-    let lastScrollY = window.pageYOffset;
-
-    const updateScrollDirection = () => {
-      const scrollY = window.pageYOffset;
-      const direction = scrollY > lastScrollY ? "down" : "up";
-      if (
-        direction !== scrollDirection &&
-        (scrollY - lastScrollY > 5 || scrollY - lastScrollY < -5)
-      ) {
-        setScrollDirection(direction);
+    const handleWheel = (event: WheelEvent) => {
+      if (event.deltaY > 0) {
+        setScrollDirection("down");
+      } else if (event.deltaY < 0) {
+        setScrollDirection("up");
       }
-      lastScrollY = scrollY > 0 ? scrollY : 0;
     };
-    window.addEventListener("scroll", updateScrollDirection); // add event listener
+
+    window.addEventListener("wheel", handleWheel);
+
     return () => {
-      window.removeEventListener("scroll", updateScrollDirection); // clean up
+      window.removeEventListener("wheel", handleWheel);
     };
-  }, [scrollDirection]);
+  }, []);
 
   return scrollDirection;
 }
