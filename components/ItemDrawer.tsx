@@ -7,11 +7,16 @@ type ItemDrawerProps = {
   children: React.ReactNode;
 };
 
+//scroll down one pixel function
+function scrollDownOnePixel() {
+  window.scrollBy(0, 1);
+}
+
 export function ItemDrawer({ children }: ItemDrawerProps) {
   return (
     <div className="z-10">
       <Drawer.Root>
-        <div>
+        <div onClick={scrollDownOnePixel}>
           <Drawer.Trigger asChild>
             <div>{children}</div>
           </Drawer.Trigger>
