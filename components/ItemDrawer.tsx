@@ -13,11 +13,15 @@ export function ItemDrawer({ children }: ItemDrawerProps) {
     console.log("clicked");
   };
 
+  function scrollDownOnePixel() {
+    window.scrollBy(0, 0);
+  }
+
   return (
     <div className="z-10">
       <Drawer.Root>
         <Drawer.Trigger asChild>
-          <button onClick={handleDrawerOpen}>
+          <button onClick={scrollDownOnePixel}>
             <div>{children}</div>
           </button>
         </Drawer.Trigger>
