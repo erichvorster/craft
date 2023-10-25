@@ -15,12 +15,45 @@ const Carousel = () => {
     }
   }, [width]);
 
+  useEffect(() => {
+    let startX = 0;
+    let startY = 0;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      const deltaX = Math.abs(e.touches[0].clientX - startX);
+      const deltaY = Math.abs(e.touches[0].clientY - startY);
+
+      if (deltaX > deltaY) {
+        e.preventDefault();
+      }
+    };
+
+    const currentCarousel = carousel.current;
+
+    currentCarousel?.addEventListener("touchstart", handleTouchStart);
+    currentCarousel?.addEventListener("touchmove", handleTouchMove);
+
+    return () => {
+      currentCarousel?.removeEventListener("touchstart", handleTouchStart);
+      currentCarousel?.removeEventListener("touchmove", handleTouchMove);
+    };
+  }, []);
+
   return (
     <div className="mt-[200px] mb-24  -z-20 ">
+      <h5 className="ml-2 font-bold text-md tracking-wide">
+        POPULAR MENU ITEMS
+      </h5>
       <motion.div
         ref={carousel}
         className="cursor-grab overflow-hidden -z-20"
         whileTap={{ cursor: "grabbing" }}
+        style={{ overflowY: "hidden" }}
       >
         <motion.div
           className="flex -z-20"
@@ -31,7 +64,7 @@ const Carousel = () => {
             return (
               <motion.div
                 key={index}
-                className="min-w-[13rem] min-h-[18rem] bg-yellow-500/75 m-4 rounded-lg -z-20 relative"
+                className="min-w-[11rem] min-h-[11rem]  m-2 rounded-lg card-shadow -z-20 relative p-1"
               >
                 <Image
                   src={Burger}
@@ -39,15 +72,14 @@ const Carousel = () => {
                   className="rounded-lg -z-30"
                   layout="responsive"
                   style={{
-                    width: "13rem",
-                    height: "18rem",
+                    width: "11rem",
+                    height: "11rem",
                     pointerEvents: "none",
                   }}
                 />
-                <div className="absolute z-10 bottom-10 text-3xl text-yellow-400 font-bold p-4">
-                  <h5>The Bacon Burger</h5>
+                <div className="mt-2">
+                  <h6 className="text-lg font-bold">Bacon Burger</h6>
                 </div>
-                <div className="absolute top-0 mt-20 right-0 bottom-0 left-0 bg-gradient-to-b from-transparent to-gray-900 rounded-bl-lg rounded-br-lg"></div>
               </motion.div>
             );
           })}
