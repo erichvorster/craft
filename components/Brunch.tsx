@@ -12,8 +12,8 @@ const Brunch = () => {
       />
       <ItemDrawer>
         {items.map((itemm, idx) => (
-          <div className="grid grid-cols-3 mt-8">
-            <div className=" w-auto border border-primary rounded bg-foreground"></div>
+          <div className="grid grid-cols-3 mt-4 card-shadow rounded-lg p-2">
+            <div className=" w-auto border border-primary rounded-lg bg-foreground"></div>
             <div className="col-span-2 ml-4">
               <div className="flex justify-between">
                 <h5 className="text-xl font-bold">Brunch Item</h5>
