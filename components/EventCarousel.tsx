@@ -2,15 +2,15 @@ import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Burger from "../public/burger.jpg";
 import Image, { StaticImageData } from "next/image";
+import { ItemDrawer } from "@/components/ItemDrawer";
 
 const card = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 type CarouselProps = {
   images: StaticImageData[];
-  type: string;
 };
 
-const Carousel = ({ images, type }: CarouselProps) => {
+const EventCarousel = ({ images }: CarouselProps) => {
   const [width, setWidth] = useState(0);
   const carousel = useRef<HTMLDivElement>(null);
 
@@ -50,10 +50,8 @@ const Carousel = ({ images, type }: CarouselProps) => {
   }, []);
 
   return (
-    <div className=" mb-24  -z-20 ">
-      <h5 className="ml-2 font-bold text-md tracking-wide">
-        POPULAR MENU ITEMS
-      </h5>
+    <div className="mb-24 -z-50 ">
+      <h5 className="ml-2 font-bold text-md tracking-wide">EVENTS</h5>
       <motion.div
         ref={carousel}
         className="cursor-grab overflow-hidden -z-20"
@@ -67,27 +65,22 @@ const Carousel = ({ images, type }: CarouselProps) => {
         >
           {images.map((img, index) => {
             return (
-              <motion.div
-                key={index}
-                className="min-w-[13rem] min-h-[13rem]  m-2 rounded-lg  -z-20 relative p-4 pb-8 card-shadow"
-              >
-                <Image
-                  src={img}
-                  alt="burger"
-                  className="rounded-lg -z-30"
-                  layout="responsive"
-                  width={200}
-                  height={200}
-                  style={{
-                    width: "11rem",
-                    height: "11rem",
-                    pointerEvents: "none",
-                  }}
-                />
-                <div className="mt-4">
-                  <h6 className="text-lg font-bold">Bacon Burger</h6>
-                </div>
-              </motion.div>
+              <ItemDrawer image={img}>
+                <motion.div
+                  key={index}
+                  className="min-w-[13rem] min-h-[13rem]  m-2 rounded-lg card-shadow -z-50 relative 
+                  "
+                >
+                  <Image
+                    src={img}
+                    alt="burger"
+                    className="rounded-lg relative -z-50"
+                    layout="responsive"
+                    width={300}
+                    height={300}
+                  />
+                </motion.div>
+              </ItemDrawer>
             );
           })}
         </motion.div>
@@ -96,4 +89,4 @@ const Carousel = ({ images, type }: CarouselProps) => {
   );
 };
 
-export default Carousel;
+export default EventCarousel;

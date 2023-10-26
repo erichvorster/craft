@@ -19,7 +19,7 @@ const Sandwhiches = () => {
     <>
       <CategoryHeader headerText={"SANDWHICHES, DOGS & LIGHTER MEALS"} />
       <ItemDrawer>
-        <div className="mt-72">
+        <div>
           {items.map((item, idx) => (
             <div className="grid grid-cols-4 mt-8">
               <div className=" w-auto border border-primary rounded bg-foreground col-span-2"></div>
