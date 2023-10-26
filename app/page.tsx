@@ -16,6 +16,11 @@ import Sandwhiches from "@/components/Sandwhiches";
 import { ItemDrawer } from "@/components/ItemDrawer";
 import Carousel from "@/components/Carousel";
 
+import eventImages from "../public/eventImages";
+import popularImages from "../public/popularImages";
+import EventCarousel from "@/components/EventCarousel";
+import ActionButton from "@/components/ActionButton";
+
 export default function Home() {
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const [isFood, setIsFood] = useState(true);
@@ -109,12 +114,39 @@ export default function Home() {
               setActiveTab={setActiveTab}
             />
           </div>
-          <TabsContent value="account">
-            <Carousel />
-            {(activeTab === 1 || activeTab === 2) && <Brunch />}
-            {(activeTab === 1 || activeTab === 3) && <Snacks />}
-            {(activeTab === 1 || activeTab === 4) && <Bowls />}
-            {(activeTab === 1 || activeTab === 5) && <Sandwhiches />}
+          <TabsContent value="account" className="pt-44">
+            {/* {activeTab === 1 && <Carousel />} */}
+
+            <ActionButton />
+            <Carousel images={popularImages} type="Event" />
+
+            {(activeTab === 1 || activeTab === 2) && (
+              <div className="mt-24">
+                <Brunch />
+              </div>
+            )}
+
+            {(activeTab === 1 || activeTab === 3) && (
+              <div className="mt-24">
+                <Snacks />
+              </div>
+            )}
+            {(activeTab === 1 || activeTab === 4) && (
+              <div className="mt-24">
+                <Bowls />
+              </div>
+            )}
+            {(activeTab === 1 || activeTab === 5) && (
+              <div className="mt-24">
+                <Sandwhiches />
+              </div>
+            )}
+
+            {activeTab === 1 && (
+              <div className="mt-24">
+                <EventCarousel images={eventImages} />
+              </div>
+            )}
           </TabsContent>
         </Tabs>
       </div>

@@ -6,7 +6,7 @@ const Snacks = () => {
   const items = [1, 2, 3, 4, 5];
 
   return (
-    <div className="mt-72">
+    <div>
       <CategoryHeader headerText={"SNACKS"} />
       <ItemDrawer>
         {items.map((itemm, idx) => (
