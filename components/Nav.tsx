@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import {
   Sheet,
@@ -47,23 +49,27 @@ const Nav = () => {
                   />
                 </h1>
                 <ul className="mt-12">
-                  <li
-                    onClick={() => setActiveTab(1)}
-                    className={`text-primary text-xl flex items-center p-2 rounded-md cursor-pointer ${
-                      activeTab === 1 && "bg-yellow-300/25 "
-                    }`}
-                  >
-                    <div
-                      className={`p-2 rounded-full mr-2 ${
-                        activeTab == 1 && "bg-yellow-500/75"
+                  <Link href="/">
+                    <li
+                      onClick={() => setActiveTab(1)}
+                      className={`text-primary text-xl flex items-center p-2 rounded-md cursor-pointer ${
+                        activeTab === 1 && "bg-yellow-300/25 "
                       }`}
                     >
-                      <Utensils color="#0D061D" size={22} />
-                    </div>
-                    <p className={`${activeTab === 1 && "text-yellow-800/75"}`}>
-                      Menu
-                    </p>
-                  </li>
+                      <div
+                        className={`p-2 rounded-full mr-2 ${
+                          activeTab == 1 && "bg-yellow-500/75"
+                        }`}
+                      >
+                        <Utensils color="#0D061D" size={22} />
+                      </div>
+                      <p
+                        className={`${activeTab === 1 && "text-yellow-800/75"}`}
+                      >
+                        Menu
+                      </p>
+                    </li>
+                  </Link>
                   <Link href="/Specials">
                     <li
                       onClick={() => setActiveTab(2)}

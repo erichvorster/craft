@@ -60,6 +60,7 @@ export default function Home() {
   }, []);
 
   const items = [1, 2, 3, 4, 5];
+
   const scrollDirection = useScrollDirection();
   console.log(scrollDirection);
 
@@ -81,17 +82,16 @@ export default function Home() {
       <div className="mt-4">
         <Tabs defaultValue="account" className="w-full ">
           <div
-            className={`fixed z-10 top-0 left-0 right-0 bg-white p-4 ${
-              scrollDirection === "down"
-                ? "-translate-y-[120px]"
-                : "translate-y-0"
-            } ${
-              scrolledToTop
-                ? ""
-                : "box-shadow transition-shadow duration-200 ease-in-out"
-            }`}
+          // className={`fixed z-10 top-0 left-0 right-0 bg-white p-4 ${
+          //   scrollDirection === "down"
+          //     ? "-translate-y-[60px]"
+          //     : "translate-y-0"
+          // } ${
+          //   scrolledToTop
+          //     ? ""
+          //     : "box-shadow transition-shadow duration-200 ease-in-out"
+          // }`}
           >
-            <Nav />
             <TabsList className="w-full">
               <TabsTrigger
                 value="account"
@@ -148,6 +148,7 @@ export default function Home() {
               </div>
             )}
           </TabsContent>
+          <TabsContent value="password" className="pt-44"></TabsContent>
         </Tabs>
       </div>
     </main>
