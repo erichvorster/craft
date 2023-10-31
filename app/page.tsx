@@ -15,6 +15,7 @@ import Brunch from "@/components/Brunch";
 import Sandwhiches from "@/components/Sandwhiches";
 import { ItemDrawer } from "@/components/ItemDrawer";
 import Carousel from "@/components/Carousel";
+import Beer from "@/components/Beer";
 
 import eventImages from "../public/eventImages";
 import popularImages from "../public/popularImages";
@@ -148,7 +149,14 @@ export default function Home() {
               </div>
             )}
           </TabsContent>
-          <TabsContent value="password" className="pt-44"></TabsContent>
+          <TabsContent value="password" className="pt-44">
+            <h4 className="tracking-widest text-6xl font-extrabold text-center">
+              ICE COLD BEER
+            </h4>
+            <div className="mt-4">
+              <Beer />
+            </div>
+          </TabsContent>
         </Tabs>
       </div>
     </main>
