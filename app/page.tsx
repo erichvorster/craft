@@ -21,13 +21,14 @@ import eventImages from "../public/eventImages";
 import popularImages from "../public/popularImages";
 import EventCarousel from "@/components/EventCarousel";
 import ActionButton from "@/components/ActionButton";
+import Gin from "@/components/Gin";
 
 export default function Home() {
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const [isFood, setIsFood] = useState(true);
   const [activeTab, setActiveTab] = useState(1);
   const [scrollPosition, setScrollPosition] = useState(0);
-  console.log(scrollPosition);
+  console.log(activeTab);
 
   const foodTabs = [
     "ALL",
@@ -116,10 +117,12 @@ export default function Home() {
             />
           </div>
           <TabsContent value="account" className="pt-44">
-            {/* {activeTab === 1 && <Carousel />} */}
-
-            <ActionButton />
-            <Carousel images={popularImages} type="Event" />
+            {activeTab === 1 && (
+              <>
+                <ActionButton />
+                <Carousel images={popularImages} type="Event" />
+              </>
+            )}
 
             {(activeTab === 1 || activeTab === 2) && (
               <div className="mt-24">
@@ -150,12 +153,23 @@ export default function Home() {
             )}
           </TabsContent>
           <TabsContent value="password" className="pt-44">
-            <h4 className="tracking-widest text-6xl font-extrabold text-center">
-              ICE COLD BEER
-            </h4>
-            <div className="mt-4">
-              <Beer />
-            </div>
+            {(activeTab === 1 || activeTab === 2) && (
+              <>
+                <h4 className="tracking-widest text-6xl font-extrabold text-center">
+                  ICE COLD BEER
+                </h4>
+                <div className="mt-4">
+                  <Beer />
+                </div>
+              </>
+            )}
+            {activeTab === 3 && (
+              <>
+                <div className="mt-4">
+                  <Gin />
+                </div>
+              </>
+            )}
           </TabsContent>
         </Tabs>
       </div>
