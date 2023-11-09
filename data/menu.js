@@ -8,7 +8,8 @@ let MenuItems = {
           id: 1,
           producer: "Agar’s ",
           name: "Tomahawk IPA ",
-          description: "",
+          description:
+            "Agar’s Tomahawk IPA is a hop-head’s delight, exuberantly unbalanced with aggressive bitterness and juicy, citrusy hop flavours. The malt profile is generally clean and simple with just enough caramel sweetness to provide support.",
           fixedPrice: {
             size: null,
             price: null,
@@ -44,7 +45,8 @@ let MenuItems = {
           id: 2,
           producer: "Bitburger Brewery (DE)",
           name: "Premium Pilsener",
-          description: "",
+          description:
+            "Bitburger Pilsner - A straw-coloured pilsner which is crystal-clear and perfectly hopped, boasting a light taste and a lasting foam head with extra-fine bubbles. This all combines for a moment of pure pilsner enjoyment.",
           fixedPrice: {
             size: null,
             price: null,
@@ -80,7 +82,8 @@ let MenuItems = {
           id: 3,
           producer: "Brauhaus Afrika",
           name: "Dunkel Lager",
-          description: "",
+          description:
+            "This Dark Coloured Lager (not a stout!) is appreciated for a full body of malty flavours; whilst still being refreshing and crisp to taste. Dunkel means ‘dark’ in German; and the beer owes its’ colour and hint of coffee & caramel flavours to the roasted barley malt used in the brewing process. Brewed by Brauhaus Afrika in the Magaliesberg valley next to the Olifantsnek dam near Rustenburg in North West, South Africa.",
           fixedPrice: {
             size: null,
             price: null,
@@ -116,7 +119,8 @@ let MenuItems = {
           id: 4,
           producer: "Brouwerij Palm (BE)",
           name: "Belgian Amber Ale",
-          description: "",
+          description:
+            "The “Spéciale Belge Ale” beer style is one of the better Belgian beers of the early 20th century. This smooth-drinking, amber-coloured, top-fermentation beer has a reasonable alcohol content. Special PALM malts are responsible for its honey-like mellowness, and PALM’s own selected yeasts give it a fruity yeast aroma. Fine aroma hops from Kent afford a subtle harmony.",
           fixedPrice: {
             size: null,
             price: null,
@@ -152,7 +156,8 @@ let MenuItems = {
           id: 5,
           producer: "Cape Brewing Company",
           name: "Amber Weiss",
-          description: "",
+          description:
+            "Fruity and aromatic - banana ester and a slight hint of clove are noticed in the finishing. Since our Amber Weiss is only lightly hopped, no more than a light bitterness is noticeable in the finish.",
           fixedPrice: {
             size: null,
             price: null,

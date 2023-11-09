@@ -1,4 +1,7 @@
 import React from "react";
+import MenuItems from "../data/menu";
+import BeerImg from "../public/beer.png";
+import Image from "next/image";
 
 import {
   Accordion,
@@ -18,40 +21,68 @@ const Beer = () => {
   return (
     <>
       <Accordion type="single" collapsible>
-        {beers.map((beer, idx) => (
+        {MenuItems.drinks.iceColdBeer.items.map((beer, idx) => (
           <AccordionItem value={`item-${idx}`}>
             <AccordionTrigger className="py-1  text-lg">
-              <span className="mr-3">{idx + 1}</span>Agar's -{" "}
-              <strong>Tomohawk IPA</strong>
-              <span className="ml-2"> - 7%</span>
+              <span className="mr-3">{beer.id}</span>
+              {beer.producer} - <strong> {beer.name}</strong>
+              <span className="ml-2"> - {beer.alcoholPercentage}%</span>
             </AccordionTrigger>
-            <AccordionContent className="bg-neutral-200 rounded-md mb-4 p-4">
-              <div className="rounded-md border bg-neutral-300 p-0 m-0 mb-2">
-                <table className="w-full border-collapse text-center my-2 ">
-                  <thead>
-                    <tr className="font-bold">
-                      <td>160ml</td>
-                      <td>340ml</td>
-                      <td>500ml</td>
-                      <td>1L</td>
-                      <td>2.3L</td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="font-bold text-yellow-500/75 text-lg">
-                      <td>25</td>
-                      <td>50</td>
-                      <td>65</td>
-                      <td>120</td>
-                      <td>250</td>
-                    </tr>
-                  </tbody>
-                </table>
+            <AccordionContent className="border-2 border-black mb-4 ">
+              <div className="">
+                <div className="bg-neutral-300">
+                  <Image
+                    src={BeerImg}
+                    alt="beer"
+                    width={400}
+                    className="mx-auto pt-4"
+                  />
+                </div>
+
+                <div className="m-0 mb-2">
+                  <table className="w-full border-collapse text-center my-2 ">
+                    <thead>
+                      <tr className="font-bold ">
+                        <td className="border-t-2 border-r-2 border-b-2 border-black py-2">
+                          160ml
+                        </td>
+                        <td className="border-t-2 border-r-2 border-b-2 border-black py-2">
+                          340ml
+                        </td>
+                        <td className="border-t-2 border-r-2 border-b-2 border-black py-2">
+                          500ml
+                        </td>
+                        <td className="border-t-2 border-r-2 border-b-2 border-black py-2">
+                          1L
+                        </td>
+                        <td className="border-t-2 border-r-0 border-b-2 border-black py-2">
+                          2.3L
+                        </td>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="font-bold text-yellow-500/75 text-lg">
+                        <td className="border-r-2 border-b-2 border-black py-2">
+                          {beer.variantPrices[0].price}
+                        </td>
+                        <td className="border-r-2 border-b-2 border-black py-2">
+                          {beer.variantPrices[1].price}
+                        </td>
+                        <td className="border-r-2 border-b-2 border-black py-2">
+                          {beer.variantPrices[2].price}
+                        </td>
+                        <td className="border-r-2 border-b-2 border-black py-2">
+                          {beer.variantPrices[3].price}
+                        </td>
+                        <td className="border-r-0 border-b-2 border-black py-2">
+                          {beer.variantPrices[4].price}
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="p-4">{beer.description}</p>
               </div>
-              Agar’s Tomahawk IPA is a hop-head’s delight, exuberantly
-              unbalanced with aggressive bitterness and juicy, citrusy hop
-              flavours. The malt profile is generally clean and simple with just
-              enough caramel sweetness to provide support.
             </AccordionContent>
           </AccordionItem>
         ))}
