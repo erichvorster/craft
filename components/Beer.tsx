@@ -28,60 +28,75 @@ const Beer = () => {
               {beer.producer} - <strong> {beer.name}</strong>
               <span className="ml-2"> - {beer.alcoholPercentage}%</span>
             </AccordionTrigger>
-            <AccordionContent className="border-2 border-black mb-4 ">
+            <AccordionContent className="border-2 border-black  ">
               <div className="">
-                <div className="bg-neutral-300">
+                <div className="">
                   <Image
                     src={BeerImg}
                     alt="beer"
-                    width={400}
+                    width={250}
                     className="mx-auto pt-4"
                   />
                 </div>
-
                 <div className="m-0 mb-2">
-                  <table className="w-full border-collapse text-center my-2 ">
-                    <thead>
-                      <tr className="font-bold ">
-                        <td className="border-t-2 border-r-2 border-b-2 border-black py-2">
-                          160ml
-                        </td>
-                        <td className="border-t-2 border-r-2 border-b-2 border-black py-2">
-                          340ml
-                        </td>
-                        <td className="border-t-2 border-r-2 border-b-2 border-black py-2">
-                          500ml
-                        </td>
-                        <td className="border-t-2 border-r-2 border-b-2 border-black py-2">
-                          1L
-                        </td>
-                        <td className="border-t-2 border-r-0 border-b-2 border-black py-2">
-                          2.3L
-                        </td>
-                      </tr>
-                    </thead>
+                  <table className="w-full">
                     <tbody>
-                      <tr className="font-bold text-yellow-500/75 text-lg">
-                        <td className="border-r-2 border-b-2 border-black py-2">
-                          {beer.variantPrices[0].price}
+                      <tr>
+                        <td className="border-t-2 border-r-2 border-b-2 border-black w-[80%] text-3xl p-4">
+                          {beer.producer} -
+                          <span className="font-bold">{beer.name}</span>
                         </td>
-                        <td className="border-r-2 border-b-2 border-black py-2">
-                          {beer.variantPrices[1].price}
-                        </td>
-                        <td className="border-r-2 border-b-2 border-black py-2">
-                          {beer.variantPrices[2].price}
-                        </td>
-                        <td className="border-r-2 border-b-2 border-black py-2">
-                          {beer.variantPrices[3].price}
-                        </td>
-                        <td className="border-r-0 border-b-2 border-black py-2">
-                          {beer.variantPrices[4].price}
+                        <td className="border-t-2 border-r-0 border-b-2 border-black w-[20%] text-3xl font-bold text-center">
+                          {beer.alcoholPercentage}%
                         </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
-                <p className="p-4">{beer.description}</p>
+                <div className="p-4">
+                  <p className="font-bold mb-1">Description</p>
+                  <p>{beer.description}</p>
+                </div>
+                <table className="w-full border-collapse text-center">
+                  <thead>
+                    <tr className="font-bold ">
+                      <td className="border-t-2 border-r-2 border-b-2 border-black p-2 w-[20%]">
+                        160ml
+                      </td>
+                      <td className="border-t-2 border-r-2 border-b-2 border-black p-2 w-[20%]">
+                        340ml
+                      </td>
+                      <td className="border-t-2 border-r-2 border-b-2 border-black p-2 w-[20%]">
+                        500ml
+                      </td>
+                      <td className="border-t-2 border-r-2 border-b-2 border-black p-2 w-[20%]">
+                        1L
+                      </td>
+                      <td className="border-t-2 border-r-0 border-b-2 border-black p-2 w-[20%]">
+                        2.3L
+                      </td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="font-bold text-yellow-500/75 text-2xl">
+                      <td className="border-r-2 border-b-2 border-black py-2">
+                        {beer.variantPrices[0].price}
+                      </td>
+                      <td className="border-r-2 border-b-2 border-black py-2">
+                        {beer.variantPrices[1].price}
+                      </td>
+                      <td className="border-r-2 border-b-2 border-black py-2">
+                        {beer.variantPrices[2].price}
+                      </td>
+                      <td className="border-r-2 border-b-2 border-black py-2">
+                        {beer.variantPrices[3].price}
+                      </td>
+                      <td className="border-r-0 border-b-2 border-black py-2">
+                        {beer.variantPrices[4].price}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </AccordionContent>
           </AccordionItem>
