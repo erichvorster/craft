@@ -116,7 +116,7 @@ export default function Home() {
               setActiveTab={setActiveTab}
             />
           </div>
-          <TabsContent value="account" className="pt-44">
+          <TabsContent value="account" className="pt-12">
             {activeTab === 1 && (
               <>
                 <ActionButton />
@@ -152,7 +152,7 @@ export default function Home() {
               </div>
             )}
           </TabsContent>
-          <TabsContent value="password" className="pt-44">
+          <TabsContent value="password" className="pt-12">
             {(activeTab === 1 || activeTab === 2) && (
               <>
                 <h4 className="tracking-widest text-6xl font-extrabold text-center">

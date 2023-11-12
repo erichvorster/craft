@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import MenuItems from "../data/menu";
 import BeerImg from "../public/beer.png";
 import Image from "next/image";
@@ -18,17 +18,34 @@ const Beer = () => {
     beers.push(i);
   }
 
+  // Create a ref to store a reference to the AccordionTrigger element
+  const accordionRef = useRef(null);
+
+  // Scroll to the AccordionTrigger element when it is clicked
+  const scrollToAccordion = () => {
+    if (accordionRef.current) {
+      accordionRef.current.scrollIntoView({
+        behavior: "smooth", // You can change this to "auto" for instant scrolling
+        block: "start",
+      });
+    }
+  };
+
   return (
     <>
       <Accordion type="single" collapsible>
         {MenuItems.drinks.iceColdBeer.items.map((beer, idx) => (
           <AccordionItem value={`item-${idx}`}>
-            <AccordionTrigger className="py-1  text-lg">
+            <AccordionTrigger
+              className="py-1  text-lg"
+              onClick={scrollToAccordion}
+              ref={accordionRef}
+            >
               <span className="mr-3">{beer.id}</span>
               {beer.producer} - <strong> {beer.name}</strong>
               <span className="ml-2"> - {beer.alcoholPercentage}%</span>
             </AccordionTrigger>
-            <AccordionContent className="border-2 border-black  ">
+            <AccordionContent className="border-2 border-black mb-12">
               <div className="">
                 <div className="">
                   <Image

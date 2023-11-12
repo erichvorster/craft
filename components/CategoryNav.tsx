@@ -23,7 +23,7 @@ const CategoryNav = ({
             key={index}
             onClick={() => setActiveTab(index + 1)}
             className={`${
-              activeTab === index + 1 && "bg-yellow-500/50"
+              activeTab === index + 1 && "bg-foreground text-background"
             } mr-2 px-4 py-[1px] rounded whitespace-nowrap cursor-pointer text-sm`}
           >
             {tab}
