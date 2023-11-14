@@ -26,7 +26,7 @@ export function ItemDrawer({ children, image }: ItemDrawerProps) {
         <Drawer.Portal>
           <Drawer.Overlay className="fixed inset-0 bg-black/40 z-40 " />
           <Drawer.Content className="bg-zinc-100 flex flex-col rounded-t-[10px] mt-24 fixed bottom-0 left-0 right-0 z-50 ">
-            <div className="p-4 bg-neutral-200 rounded-t-[10px] flex-1  min-h-[70vh] max-h-[80vh] overflow-y-scroll">
+            <div className="p-4 bg-neutral-200 rounded-t-[10px] flex-1  min-h-[70vh] max-h-[80vh]">
               <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-300 mb-8" />
               <Image
                 src={image}
