@@ -12,35 +12,18 @@ import {
 import BeerHeader from "./BeerHeader";
 
 const Beer = () => {
+  // Generate an array of beer items for demonstration purposes
   let beers = [];
-
   for (let i = 1; i <= 20; i++) {
     beers.push(i);
   }
-
-  // Create a ref to store a reference to the AccordionTrigger element
-  const accordionRef = useRef(null);
-
-  // Scroll to the AccordionTrigger element when it is clicked
-  const scrollToAccordion = () => {
-    if (accordionRef.current) {
-      accordionRef.current.scrollIntoView({
-        behavior: "smooth", // You can change this to "auto" for instant scrolling
-        block: "start",
-      });
-    }
-  };
 
   return (
     <>
       <Accordion type="single" collapsible>
         {MenuItems.drinks.iceColdBeer.items.map((beer, idx) => (
-          <AccordionItem value={`item-${idx}`}>
-            <AccordionTrigger
-              className="py-1  text-lg"
-              onClick={scrollToAccordion}
-              ref={accordionRef}
-            >
+          <AccordionItem value={`item-${idx}`} key={idx}>
+            <AccordionTrigger className="py-1  text-lg">
               <span className="mr-3">{beer.id}</span>
               {beer.producer} - <strong> {beer.name}</strong>
               <span className="ml-2"> - {beer.alcoholPercentage}%</span>
@@ -139,6 +122,7 @@ const Beer = () => {
           </div>
         ))}
       </div>
+
       <div className="mt-20">
         <BeerHeader
           title="NON-ALCOHOLIC BEER"

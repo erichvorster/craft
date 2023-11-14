@@ -69,12 +69,12 @@ const Carousel = ({ images, type }: CarouselProps) => {
             return (
               <motion.div
                 key={index}
-                className="min-w-[13rem] min-h-[13rem]  m-2 rounded-lg  -z-20 relative  pb-2 card-shadow"
+                className="min-w-[13rem] min-h-[13rem]  m-2 -z-20 relative  pb-2 card-shadow bg-white border-2 border-foreground rounded"
               >
                 <Image
                   src={img}
                   alt="burger"
-                  className="rounded-tl-lg rounded-tr-lg -z-30"
+                  className="-z-30"
                   layout="responsive"
                   width={200}
                   height={200}
@@ -84,14 +84,11 @@ const Carousel = ({ images, type }: CarouselProps) => {
                     pointerEvents: "none",
                   }}
                 />
-                <div className="mt-2 p-4">
-                  <div className="flex justify-between">
+                <div className=" p-4">
+                  <div>
                     <h6 className="text-xl font-bold">Bacon Burger</h6>
                     <p className="text-xl font-bold text-yellow-500/75">R90</p>
                   </div>
-                  <p className="mt-2 text-sm">
-                    Lorem ipsum, dolor sit amet consectetur...
-                  </p>
                 </div>
               </motion.div>
             );
