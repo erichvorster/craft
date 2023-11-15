@@ -69,7 +69,7 @@ const Carousel = ({ images, type }: CarouselProps) => {
             return (
               <motion.div
                 key={index}
-                className="min-w-[13rem] min-h-[13rem]  m-2 -z-20 relative  pb-2 card-shadow bg-white border-2 border-foreground rounded"
+                className="min-w-[13rem] min-h-[13rem]  m-2 -z-20 relative  pb-2 card-shadow bg-white  rounded"
               >
                 <Image
                   src={img}
