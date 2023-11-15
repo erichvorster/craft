@@ -1,9 +1,9 @@
 import React from "react";
 import CategoryHeader from "./CategoryHeader";
 import { ItemDrawer } from "./ItemDrawer";
-import brunch from "../public/brunch.jpg";
 import Image from "next/image";
 import ItemCard from "./ItemCard";
+import burger from "../public/burger-2.jpg";
 
 const Brunch = () => {
   const items = [1, 2, 3, 4, 5, 6];
@@ -14,9 +14,9 @@ const Brunch = () => {
         subText={"ONLY AVAILABLE BETWEEN 10:30 AND 13:00"}
       />
       <ItemDrawer>
-        <div className="grid grid-cols-2 gap-3 mt-8">
+        <div className="grid grid-cols-2 gap-4 mt-8">
           {items.map((itemm, idx) => (
-            <ItemCard img={brunch} />
+            <ItemCard img={burger} />
           ))}
         </div>
       </ItemDrawer>

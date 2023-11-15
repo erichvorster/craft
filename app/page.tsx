@@ -16,12 +16,12 @@ import Sandwhiches from "@/components/Sandwhiches";
 import { ItemDrawer } from "@/components/ItemDrawer";
 import Carousel from "@/components/Carousel";
 import Beer from "@/components/Beer";
-
 import eventImages from "../public/eventImages";
 import popularImages from "../public/popularImages";
 import EventCarousel from "@/components/EventCarousel";
 import ActionButton from "@/components/ActionButton";
 import Gin from "@/components/Gin";
+import Burgers from "@/components/Burgers";
 
 export default function Home() {
   const [scrolledToTop, setScrolledToTop] = useState(true);
@@ -143,6 +143,11 @@ export default function Home() {
             {(activeTab === 1 || activeTab === 5) && (
               <div className="mt-24">
                 <Sandwhiches />
+              </div>
+            )}
+            {(activeTab === 1 || activeTab === 6) && (
+              <div className="mt-24">
+                <Burgers />
               </div>
             )}
 
