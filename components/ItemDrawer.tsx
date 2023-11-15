@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
+
 import { Children } from "react";
 import { Drawer } from "vaul";
 import Image, { StaticImageData } from "next/image";
 import BeerImg from "../public/beer.png";
+import { Skeleton } from "./ui/skeleton";
 ////////////////Fix any
 type ItemDrawerProps = {
   children: React.ReactNode;
@@ -23,6 +26,12 @@ type ItemDrawerProps = {
 };
 
 export function ItemDrawer({ children, image, beer, food }: ItemDrawerProps) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleImageLoad = () => {
+    setIsLoading(false);
+  };
+
   return (
     <Drawer.Root shouldScaleBackground>
       <Drawer.Trigger asChild>
@@ -37,12 +46,17 @@ export function ItemDrawer({ children, image, beer, food }: ItemDrawerProps) {
             <div>
               <div className="">
                 <div className="">
-                  <Image
-                    src={BeerImg}
-                    alt="beer"
-                    width={250}
-                    className="mx-auto pt-4"
-                  />
+                  {isLoading ? (
+                    <Skeleton className="w-[400px] h-[300px] rounded-lg bg-neutral-700 mx-auto mb-4" />
+                  ) : (
+                    <Image
+                      src={BeerImg}
+                      alt="beer"
+                      width={250}
+                      className="mx-auto pt-4"
+                      onLoad={handleImageLoad}
+                    />
+                  )}
                 </div>
                 <div className="m-0 mb-2">
                   <table className="w-full">
