@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import vegan from "../public/vegan.png";
 import chilli from "../public/chilli.png";
+import newItem from "../public/new.png";
 
 type ItemCardProps = {
   img: any;
@@ -14,11 +15,20 @@ const ItemCard = ({ img, food }: ItemCardProps) => {
   return (
     <div className="flex flex-col card-shadow bg-white rounded h-full">
       <div className="relative">
-        <div className="px-2 py-1 flex rounded-full bg-background card-shadow absolute top-2 right-2">
-          <Image src={vegan} height={20} width={20} alt="icon" />
-          <span className="px-3">|</span>
-          <Image src={chilli} height={20} width={20} alt="icon" />
+        <div className="px-2 py-1 flex rounded bg-yellow-300/75 border-2 border-black card-shadow absolute top-2 right-2">
+          <>
+            <Image src={vegan} height={20} width={20} alt="icon" />
+            <span className="px-3">|</span>
+          </>
+
+          <>
+            <Image src={chilli} height={20} width={20} alt="icon" />
+            <span className="px-3">|</span>
+          </>
+
+          <Image src={newItem} height={20} width={25} alt="icon" />
         </div>
+
         <Image
           src={img}
           height={250}
@@ -29,7 +39,7 @@ const ItemCard = ({ img, food }: ItemCardProps) => {
       </div>
       <div>
         <div className="p-2">
-          <h5 className="text-xl font-bold">{food?.name}</h5>
+          <h5 className="text-lg font-bold">{food?.name}</h5>
           <h5 className="text-xl font-bold text-yellow-500 pt-2">
             R {food?.fixedPrice?.price}
           </h5>
