@@ -2723,7 +2723,84 @@ let MenuItems = {
       ],
     },
   },
-  food: {},
+  food: {
+    brunch: {
+      displayName: "Brunch",
+      description: "Only Available between 10:30 and 13:00",
+      items: [
+        {
+          id: 1,
+          name: "Rack 'em & Stack 'em ",
+          description:
+            "200g beef patty, bacon rashers, & battered onion ring stack, filled with your choice of baked bean or mushroom sauce. Sided with 2 eggs, potato chips & a grilled tomato.",
+          fixedPrice: {
+            size: "null",
+            price: 125,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 2,
+          name: "Crafty Omelettes ",
+          description:
+            "Craft your own 3-egg omelette using any two of the following items & one cheese type: Sauerkraut, Knackwurst, bacon, Yellow cheddar, Danish feta, Onion, Tomato, Mushrooms or Green pepper. Served with some toast & side salad.",
+          fixedPrice: {
+            size: "null",
+            price: 96,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 3,
+          name: "Bacon & Mushroom or Halloumi & Mushroom  ",
+          description:
+            "Served on a home-baked, lightly toasted bread, choose between bacon or grilled halloumi,  topped with a mix of white & brown mushrooms cooked with white wine, onion, peppers, thyme, & black pepper with a touch of garlic, finished with cream & fresh parsley ",
+          fixedPrice: {
+            size: "null",
+            price: 80,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 4,
+          name: "Pretzel Breakfast",
+          description:
+            "Homemade pretzel filled with cream cheese, scrambled egg & honey-glazed bacon, topped with fresh spring onion & served with a salad",
+          fixedPrice: {
+            size: "null",
+            price: 90,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 5,
+          name: "Pommy Brunch ",
+          description:
+            "2 eggs, bacon, saucy mushrooms, baked beans, sauteed cherry tomatos & toast.",
+          fixedPrice: {
+            size: "null",
+            price: 80,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+      ],
+    },
+  },
 };
 
 let Categories = {
