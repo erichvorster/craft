@@ -13,7 +13,7 @@ const ItemCard = ({ img, food }: ItemCardProps) => {
   console.log("food:", food);
 
   return (
-    <div className="flex flex-col card-shadow bg-white rounded h-full">
+    <div className="flex flex-col bg-white h-full">
       <div className="relative">
         <div className="px-2 py-1 flex rounded bg-yellow-300/75 border-2 border-black card-shadow absolute top-2 right-2">
           <>
@@ -29,18 +29,13 @@ const ItemCard = ({ img, food }: ItemCardProps) => {
           <Image src={newItem} height={20} width={25} alt="icon" />
         </div>
 
-        <Image
-          src={img}
-          height={250}
-          width={250}
-          alt="brunch"
-          className="rounded-tl rounded-tr"
-        />
+        <Image src={img} height={250} width={250} alt="brunch" />
       </div>
       <div>
-        <div className="p-2">
-          <h5 className="text-lg font-bold">{food?.name}</h5>
-          <h5 className="text-xl font-bold text-yellow-500 pt-2">
+        <div className="py-3">
+          <h5 className="text-md font-bold tracking-wide">{food?.name}</h5>
+          <h5 className="text-xl font-bold text-yellow-500 mt-2">
+          <h5 className="text-md text-zinc-500">Brunch</h5>
             R {food?.fixedPrice?.price}
           </h5>
         </div>
