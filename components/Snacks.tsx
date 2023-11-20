@@ -4,6 +4,7 @@ import { ItemDrawer } from "./ItemDrawer";
 import Image from "next/image";
 import ItemCard from "./ItemCard";
 import burger from "../public/burger-2.jpeg";
+import MenuItems from "@/data/menu";
 
 const Snacks = () => {
   const items = [1, 2, 3, 4, 5, 6];
