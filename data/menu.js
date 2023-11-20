@@ -2800,6 +2800,368 @@ let MenuItems = {
         },
       ],
     },
+    snacks: {
+      displayName: "Snacks",
+      description: null,
+      items: [
+        {
+          id: 6,
+          name: "Beer Bread & Butter",
+          description:
+            "3 fresh thick slices of Striped Horse lager beer bread, which is infused with jalapeño and cheddar, served with butter",
+          fixedPrice: {
+            size: "null",
+            price: 55,
+          },
+          isHot: false,
+          isVegan: true,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 7,
+          name: "Pizza Slice",
+          description:
+            "Tuscan inspired street style pizza slice with marinara sauce, mozzarella and a sprig of basil with hot sauce on the side ",
+          fixedPrice: {
+            size: "null",
+            price: 55,
+          },
+          isHot: false,
+          isVegan: true,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 8,
+          name: "Mac Mac Balls",
+          description:
+            "Home-made Macaroni balls covered in panko bread crumbs, deep fried & served with Jalapeno Cheese sauce ",
+          fixedPrice: {
+            size: "null",
+            price: 65,
+          },
+          isHot: false,
+          isVegan: true,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 9,
+          name: "Crunchy Chicken Liver Nuggets",
+          description:
+            "Deep fried chicken liver nuggets covered in panko bread crumbs & served with either peri-peri or BBQ sauce ",
+          fixedPrice: {
+            size: "null",
+            price: 65,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 10,
+          name: "Pretzel Top-Up",
+          description:
+            "Home-made pretzel served with Bacon wrapped knackwurst, chutney-Mayo, sauerkraut and Dijon mustard ",
+          fixedPrice: {
+            size: "null",
+            price: 80,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 11,
+          name: "Corndogs",
+          description:
+            "3 battered & deep-fried cheese griller sausages served with a chutney peri-mayo ",
+          fixedPrice: {
+            size: "null",
+            price: 80,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 12,
+          name: "Beef Sirloin Carpaccio",
+          description:
+            "Beef sirloin crusted with black pepper corns, coarse salt, ground coriander, & chilli flakes. Served with rocket, parmesan cheese, balsamic reduction & fresh strawberries",
+          fixedPrice: {
+            size: "null",
+            price: 85,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 13,
+          name: "Cheesy Fried Sticks",
+          description:
+            "2 panko crusted mozzarella wedges, deep fried, topped with parmesan shavings and served with our famous tomato relish . ",
+          fixedPrice: {
+            size: "null",
+            price: 88,
+          },
+          isHot: false,
+          isVegan: true,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 14,
+          name: "Jalapeno Poppers",
+          description:
+            "Spicy jalapenos stuffed with cheddar cheese, cream cheese and peppers, battered and served deep fried with our chutney mustard mayo or Tzatziki . Please note portions will vary depending on popper sizes",
+          fixedPrice: {
+            size: "null",
+            price: 85,
+          },
+          isHot: true,
+          isVegan: true,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 15,
+          name: "Deep Fried Oyster Mushrooms",
+          description:
+            "Deep Fried Oyster Mushrooms covered in panko bread crumbs served with a sweet and spicy dressing",
+          fixedPrice: {
+            size: "null",
+            price: 85,
+          },
+          isHot: false,
+          isVegan: true,
+          isAvailable: true,
+          isNew: true,
+        },
+        {
+          id: 16,
+          name: "Pork Lollipops",
+          description:
+            "2 smoked pork belly lollipops served basted with a sweet and tangy pineapple bbq sauce. Garnished with pineapple and cherries",
+          fixedPrice: {
+            size: "null",
+            price: 85,
+          },
+          isHot: false,
+          isVegan: true,
+          isAvailable: true,
+          isNew: true,
+        },
+        {
+          id: 17,
+          name: "Pork Lollipops",
+          description:
+            "2 smoked pork belly lollipops served basted with a sweet and tangy pineapple bbq sauce. Garnished with pineapple and cherries",
+          fixedPrice: {
+            size: "null",
+            price: 85,
+          },
+          isHot: false,
+          isVegan: true,
+          isAvailable: true,
+          isNew: true,
+        },
+      ],
+    },
+    poke: {
+      displayName: "Poke Bowls",
+      description: null,
+      items: [
+        {
+          id: 18,
+          name: "Plain",
+          description: null,
+          fixedPrice: {
+            size: "null",
+            price: 90,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 19,
+          name: "Fallafel Balls",
+          description: null,
+          fixedPrice: {
+            size: "null",
+            price: 115,
+          },
+          isHot: false,
+          isVegan: true,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 20,
+          name: "Deep Fried Chicken",
+          description: null,
+          fixedPrice: {
+            size: "null",
+            price: 110,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 21,
+          name: "Deep Fried Biltong",
+          description: null,
+          fixedPrice: {
+            size: "null",
+            price: 130,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 22,
+          name: "Pulled Pork",
+          description: null,
+          fixedPrice: {
+            size: "null",
+            price: 130,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 23,
+          name: "Salmon Sashimi",
+          description: null,
+          fixedPrice: {
+            size: "null",
+            price: 140,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+      ],
+    },
+    salad: {
+      displayName: "Salads",
+      description: null,
+      items: [
+        {
+          id: 24,
+          name: "The Original Cobb",
+          description:
+            "The classic American garden salad made from chopped salad greens, tomato, bacon smokedchicken breast, hard-boiled egg, avocado, spring onion , Roquefort (Blue) cheese, and served with a blue cheese vinaigrette.",
+          fixedPrice: {
+            size: "null",
+            price: 110,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 25,
+          name: "Falafel Rainbow Bowl",
+          description:
+            "An explosion of colour!! 6 Crunchy sweetcorn and chickpea falafel balls served with an array of carrots, tomato salsa, beetroot crisps, guacamole, sesame mayo and steamed sweetcorn.",
+          fixedPrice: {
+            size: "null",
+            price: 100,
+          },
+          isHot: false,
+          isVegan: true,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 26,
+          name: "Smoked Chicken Salad",
+          description:
+            "Black pepper and sea salt crusted smoked chicken breast served with fresh seasonal fruit slices on salad greens, cucumber, spring onions & celery, topped with our home-made vinaigrette and crushed walnuts.",
+          fixedPrice: {
+            size: "null",
+            price: 120,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 27,
+          name: "Biltong & Avo Salad",
+          description:
+            "Salad greens, cucumber, spring onions & celery topped in our home-made vinaigrette with biltong, avo, walnuts and feta. An old fashioned delight.",
+          fixedPrice: {
+            size: "null",
+            price: 135,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 27,
+          name: "Biltong & Avo Salad",
+          description:
+            "Salad greens, cucumber, spring onions & celery topped in our home-made vinaigrette with biltong, avo, walnuts and feta. An old fashioned delight.",
+          fixedPrice: {
+            size: "null",
+            price: 135,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 28,
+          name: "Haloumi Fries",
+          description:
+            "Our famous smoked pull pork placed on a bed of haloumi fries topped off with fresh guacamole and a tomato salsa. Tossed in BBQ or Chipotle sprinkled with sesame seeds. ",
+          fixedPrice: {
+            size: "null",
+            price: 140,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 29,
+          name: "Ruby Brisket Bowl",
+          description:
+            "All-day smoked brisket, crispy fried potatoes, beetroot coleslaw and fresh rocket.",
+          fixedPrice: {
+            size: "null",
+            price: 140,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+      ],
+    },
   },
 };
 
