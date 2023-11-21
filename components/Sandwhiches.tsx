@@ -3,7 +3,7 @@ import CategoryHeader from "./CategoryHeader";
 import { ItemDrawer } from "./ItemDrawer";
 import Image from "next/image";
 import ItemCard from "./ItemCard";
-import burger from "../public/burger-2.jpeg";
+import burger from "../public/burger-2.jpg";
 
 const Sandwhiches = () => {
   const items = [1, 2, 3, 4, 5, 6];

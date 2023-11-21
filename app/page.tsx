@@ -22,6 +22,7 @@ import EventCarousel from "@/components/EventCarousel";
 import ActionButton from "@/components/ActionButton";
 import Gin from "@/components/Gin";
 import Burgers from "@/components/Burgers";
+import PromotionItem from "@/components/PromotionItem";
 
 export default function Home() {
   const [scrolledToTop, setScrolledToTop] = useState(true);
@@ -129,6 +130,7 @@ export default function Home() {
                 <Brunch />
               </div>
             )}
+            <PromotionItem />
 
             {(activeTab === 1 || activeTab === 3) && (
               <div className="mt-24">
