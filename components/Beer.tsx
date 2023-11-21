@@ -24,7 +24,7 @@ const Beer = () => {
     <>
       {MenuItems.drinks.iceColdBeer.items.map((beer, idx) => (
         <ItemDrawer beer={beer}>
-          <p className="py-1  text-lg">
+          <p className="py-1  text-md">
             <span className="mr-3">{beer.id}</span>
             {beer.producer} - <strong> {beer.name}</strong>
             <span className="ml-2"> - {beer.alcoholPercentage}%</span>

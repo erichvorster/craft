@@ -51,9 +51,12 @@ const Carousel = ({ images, type }: CarouselProps) => {
 
   return (
     <div className=" mb-24  -z-20 ">
-      <h5 className="ml-2 font-bold text-md tracking-wide">
-        POPULAR MENU ITEMS
+      <h5 className="ml-2 font-bold text-2xl tracking-wider mb-1">
+        Popular Menu Items
       </h5>
+      <p className="ml-2 mb-5 tracking-wide">
+        Hand picked by our beloved supporters
+      </p>
       <motion.div
         ref={carousel}
         className="cursor-grab overflow-hidden -z-20"
@@ -69,25 +72,27 @@ const Carousel = ({ images, type }: CarouselProps) => {
             return (
               <motion.div
                 key={index}
-                className="min-w-[13rem] min-h-[13rem]  m-2 -z-20 relative  pb-2 card-shadow bg-white  rounded"
+                className="min-w-[16rem] min-h-[16rem]  m-1 -z-20 relative  pb-2  bg-white "
               >
                 <Image
                   src={img}
                   alt="burger"
                   className="-z-30"
                   layout="responsive"
-                  width={200}
-                  height={200}
+                  width={400}
+                  height={400}
                   style={{
-                    width: "11rem",
-                    height: "11rem",
+                    width: "16rem",
+                    height: "16rem",
                     pointerEvents: "none",
                   }}
                 />
-                <div className=" p-4">
+                <div className="p-2">
                   <div>
-                    <h6 className="text-xl font-bold">Bacon Burger</h6>
-                    <p className="text-xl font-bold text-yellow-500/75">R90</p>
+                    <h6 className="text-lg font-bold tracking-wide">
+                      Bacon Burger
+                    </h6>
+                    <p className="text-lg  text-yellow-500/75">R90</p>
                   </div>
                 </div>
               </motion.div>
