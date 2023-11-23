@@ -28,8 +28,9 @@ const ItemCard = ({ img, food }: ItemCardProps) => {
 
           <Image src={newItem} height={20} width={25} alt="icon" />
         </div>
-
-        <Image src={img} height={250} width={250} alt="brunch" />
+        <div className="h-[250px] w-[250px]">
+          <Image src={img} layout="fill" objectFit="cover" alt="brunch" />
+        </div>
       </div>
       <div>
         <div className="py-2 px-1">
