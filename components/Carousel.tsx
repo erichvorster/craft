@@ -70,23 +70,22 @@ const Carousel = ({ images, type }: CarouselProps) => {
         >
           {images.map((img, index) => {
             return (
-              <motion.div
-                key={index}
-                className="min-w-[16rem] min-h-[16rem]  m-1 -z-20 relative  pb-2  bg-white "
-              >
-                <Image
-                  src={img}
-                  alt="burger"
-                  className="-z-30"
-                  layout="responsive"
-                  width={400}
-                  height={400}
-                  style={{
-                    width: "16rem",
-                    height: "16rem",
-                    pointerEvents: "none",
-                  }}
-                />
+              <div>
+                <motion.div
+                  key={index}
+                  className="min-w-[16rem] min-h-[16rem]  m-1 -z-20 relative  pb-2  bg-white "
+                >
+                  <Image
+                    src={img}
+                    alt="burger"
+                    className="-z-30"
+                    layout="fill"
+                    objectFit="fill"
+                    style={{
+                      pointerEvents: "none",
+                    }}
+                  />
+                </motion.div>
                 <div className="p-2">
                   <div>
                     <h6 className="text-lg font-bold tracking-wide">
@@ -95,7 +94,7 @@ const Carousel = ({ images, type }: CarouselProps) => {
                     <p className="text-lg  text-yellow-500/75">R90</p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             );
           })}
         </motion.div>
