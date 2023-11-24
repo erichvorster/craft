@@ -10,8 +10,6 @@ type ItemCardProps = {
 };
 
 const ItemCard = ({ img, food }: ItemCardProps) => {
-  console.log("food:", food);
-
   return (
     <div className="flex flex-col bg-white h-full">
       <div className="relative">

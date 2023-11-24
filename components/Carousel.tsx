@@ -70,7 +70,7 @@ const Carousel = ({ images, type }: CarouselProps) => {
         >
           {images.map((img, index) => {
             return (
-              <div>
+              <div className="flex flex-col">
                 <motion.div
                   key={index}
                   className="min-w-[16rem] min-h-[16rem]  m-1 -z-20 relative  pb-2  bg-white "
@@ -80,7 +80,6 @@ const Carousel = ({ images, type }: CarouselProps) => {
                     alt="burger"
                     className="-z-30"
                     layout="fill"
-                    objectFit="fill"
                     style={{
                       pointerEvents: "none",
                     }}

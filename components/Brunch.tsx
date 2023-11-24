@@ -18,7 +18,7 @@ const Brunch = () => {
 
       <div className="grid grid-cols-2 gap-2 mt-8">
         {MenuItems.food.brunch.items.map((item, idx) => (
-          <ItemDrawer food={item}>
+          <ItemDrawer food={item} img={food[idx + 1]}>
             <ItemCard img={food[idx + 1]} food={item} />
           </ItemDrawer>
         ))}

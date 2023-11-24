@@ -10,7 +10,7 @@ import { Skeleton } from "./ui/skeleton";
 ////////////////Fix any
 type ItemDrawerProps = {
   children: React.ReactNode;
-  image?: any;
+  img?: any;
   beer?: {
     producer: string;
     alcoholPercentage: number;
@@ -27,11 +27,12 @@ type ItemDrawerProps = {
   food?: any;
 };
 
-export function ItemDrawer({ children, image, beer, food }: ItemDrawerProps) {
-  const [isLoading, setIsLoading] = useState(true);
+export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
+  const [loading, setLoading] = useState(true);
 
   const handleImageLoad = () => {
-    setIsLoading(false);
+    setLoading(false);
+    console.log(loading, "loading");
   };
 
   return (
@@ -43,19 +44,19 @@ export function ItemDrawer({ children, image, beer, food }: ItemDrawerProps) {
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-black/40" />
         <Drawer.Content className="bg-popover text-zinc-200 flex flex-col rounded-t-[10px] h-[96%] mt-24 fixed bottom-0 left-0 right-0">
-          {beer && (
+          {/* {beer && (
             <>
               <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-300 mb-4 mt-4" />
               <div>
                 <div className="">
                   <div className="">
-                    {isLoading ? (
+                    {loading ? (
                       <Skeleton className="w-[350px] h-[300px] rounded-lg bg-neutral-700 mx-auto mb-4" />
                     ) : (
                       <Image
-                        src={BeerImg}
+                        src={img}
                         alt="beer"
-                        width={250}
+                        fill
                         className="mx-auto pt-4"
                         onLoad={handleImageLoad}
                       />
@@ -123,7 +124,7 @@ export function ItemDrawer({ children, image, beer, food }: ItemDrawerProps) {
                 </div>
               </div>
             </>
-          )}
+          )} */}
 
           {food && (
             <>
@@ -131,11 +132,11 @@ export function ItemDrawer({ children, image, beer, food }: ItemDrawerProps) {
               <div>
                 <div className="">
                   <div className="">
-                    {isLoading ? (
+                    {loading === true ? (
                       <Skeleton className="w-[350px] h-[300px] rounded-lg bg-neutral-700 mx-auto mb-4" />
                     ) : (
                       <Image
-                        src={BeerImg}
+                        src={img}
                         alt="beer"
                         width={250}
                         className="mx-auto pt-4"

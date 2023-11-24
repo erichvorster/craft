@@ -29,7 +29,6 @@ export default function Home() {
   const [isFood, setIsFood] = useState(true);
   const [activeTab, setActiveTab] = useState(1);
   const [scrollPosition, setScrollPosition] = useState(0);
-  console.log(activeTab);
 
   const foodTabs = [
     "ALL",
@@ -65,7 +64,6 @@ export default function Home() {
   const items = [1, 2, 3, 4, 5];
 
   const scrollDirection = useScrollDirection();
-  console.log(scrollDirection);
 
   const handleScroll = () => {
     const pxFromTop = window.scrollY;

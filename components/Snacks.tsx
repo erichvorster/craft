@@ -12,15 +12,13 @@ const Snacks = () => {
   return (
     <div className="mt-18">
       <CategoryHeader headerText={"SNACKS"} />
-      <ItemDrawer>
-        <div className="grid grid-cols-2 gap-2 mt-8">
-          {MenuItems.food.snacks.items.map((item, idx) => (
-            <ItemDrawer food={item}>
-              <ItemCard img={food[idx + 11]} food={item} />
-            </ItemDrawer>
-          ))}
-        </div>
-      </ItemDrawer>
+      <div className="grid grid-cols-2 gap-2 mt-8">
+        {MenuItems.food.snacks.items.map((item, idx) => (
+          <ItemDrawer food={item}>
+            <ItemCard img={food[idx + 11]} food={item} />
+          </ItemDrawer>
+        ))}
+      </div>
     </div>
   );
 };
