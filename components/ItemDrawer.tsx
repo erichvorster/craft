@@ -128,7 +128,7 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
 
           {food && (
             <>
-              <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-300 mb-4 mt-4" />
+              <div className="mx-auto w-24 h-1 flex-shrink-0 rounded-full bg-zinc-300 mb-4 mt-4" />
               <div>
                 <div className="">
                   <div className="">

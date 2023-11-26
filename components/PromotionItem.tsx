@@ -12,9 +12,6 @@ const PromotionItem = () => {
         height={60}
         alt="Event Image"
       />
-      <div className="absolute inset-0 flex flex-col justify-end bg-black bg-opacity-25 text-white">
-        <p className="text-3xl font-bold">Tuesday Quiz Nights</p>
-      </div>
     </div>
   );
 };

@@ -23,6 +23,7 @@ import ActionButton from "@/components/ActionButton";
 import Gin from "@/components/Gin";
 import Burgers from "@/components/Burgers";
 import PromotionItem from "@/components/PromotionItem";
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   const [scrolledToTop, setScrolledToTop] = useState(true);
@@ -118,6 +119,20 @@ export default function Home() {
           <TabsContent value="account" className="pt-12">
             {activeTab === 1 && (
               <>
+                <div className="mb-12">
+                  <h1 className="text-6xl mb-2 font-bold">
+                    CAPITAL
+                    <br /> CRAFT
+                  </h1>
+                  <p className="text-md">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Commodi, perspiciatis?
+                  </p>
+                  <Button className="mt-6 rounded-lg w-full px-12 bg-background border-2 border-foreground  text-foreground font-bold text-md">
+                    Sign up
+                  </Button>
+                </div>
+
                 <ActionButton />
                 <Carousel images={popularImages} type="Event" />
               </>
@@ -128,13 +143,13 @@ export default function Home() {
                 <Brunch />
               </div>
             )}
-            <PromotionItem />
 
             {(activeTab === 1 || activeTab === 3) && (
               <div className="mt-24">
                 <Snacks />
               </div>
             )}
+            <PromotionItem />
             {(activeTab === 1 || activeTab === 4) && (
               <div className="mt-24">
                 <Bowls />

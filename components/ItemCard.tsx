@@ -11,7 +11,7 @@ type ItemCardProps = {
 
 const ItemCard = ({ img, food }: ItemCardProps) => {
   return (
-    <div className="flex flex-col bg-white h-full">
+    <div className="flex flex-col  h-full rounded">
       <div className="relative">
         <div className="px-2 py-1 flex rounded bg-yellow-300/75 border-2 border-black card-shadow absolute top-2 right-2">
           <>

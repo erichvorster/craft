@@ -24,7 +24,7 @@ const Nav = () => {
 
   return (
     <div className="flex justify-between items-center py-4 px-3">
-      <h1 className="text-2xl font-bold flex items-center">CAPITAL CRAFT </h1>
+      <img src="/download.png" alt="logo" width="35" height="35" />
       <Sheet>
         <SheetTrigger>
           <div className="cursor-pointer">

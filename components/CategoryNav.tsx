@@ -63,19 +63,19 @@ const CategoryNav = ({
   };
 
   return (
-    <div className="overflow-hidden w-full h-full mt-4 px-1 relative">
+    <div className="overflow-hidden w-full h-full mt-4 px-1 relative z-0">
       <div
         className="overflow-x-scroll flex w-full h-full scrollbar-none"
         ref={scrollContainerRef}
       >
         <div
-          className={`w-12 bg-gradient-to-r from-transparent to-white absolute right-0 h-full z-50 ${
+          className={`w-12 bg-gradient-to-r from-transparent to-background absolute right-0 h-full z-50 ${
             isScrolledToRight ? "hidden" : ""
           }`}
           onClick={handleScrollRight}
         />
         <div
-          className={`w-12 bg-gradient-to-r from-white to-transparent absolute left-0 h-full z-50 ${
+          className={`w-12 bg-gradient-to-r from-background to-transparent absolute left-0 h-full z-50 ${
             isScrolledToLeft ? "hidden" : ""
           }`}
           onClick={handleScrollLeft}
@@ -86,16 +86,16 @@ const CategoryNav = ({
             onClick={() => setActiveTab(index + 1)}
             className={`${
               activeTab === index + 1 && " text-background"
-            } mr-2 px-4 py-[1px] rounded whitespace-nowrap cursor-pointer text-sm relative`}
+            } mr-2 px-4 py-[1px] rounded whitespace-nowrap cursor-pointer text-md relative`}
           >
             {activeTab === index + 1 && (
               <motion.span
                 layoutId="bubble"
-                className="absolute inset-0 z-0 bg-foreground mix-blend-difference rounded p-2"
-                transition={{ type: "spring", bounce: 0.2, duration: 0.5 }}
+                className="absolute inset-0 z-50 border-2 border-foreground rounded-lg flex justify-center"
+                transition={{ type: "tween", duration: 0.2 }}
               />
             )}
-            {tab}
+            <p className="py-[1px]">{tab}</p>
           </motion.div>
         ))}
       </div>
