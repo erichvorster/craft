@@ -8,7 +8,7 @@ type CategoryHeaderProps = {
 const CategoryHeader = ({ headerText, subText }: CategoryHeaderProps) => {
   return (
     <>
-      <div className="py-1 text-3xl font-bold border-primary tracking-wider">
+      <div className="py-1 text-3xl font-bold border-primary tracking-wider text-foreground">
         {headerText}
       </div>
       {subText && (

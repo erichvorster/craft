@@ -5,11 +5,22 @@
 body{
   background-color: var(--background);
 }
+
+input,
+textarea,
+button,
+select,
+div,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
  
 @layer base {
   :root {
-    --background: 30, 24%, 91%;
-    --foreground:  240 1.5% 7.3%;
+    --background: 	hsl(0, 0%, 96%);
+    --foreground:  345, 6%, 13%;
+
+    --text: 0, 0%, 100%;
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;

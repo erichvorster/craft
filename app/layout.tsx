@@ -1,11 +1,11 @@
 import Footer from "@/components/Footer";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Roboto_Condensed } from "next/font/google";
+import { Roboto_Condensed, Roboto } from "next/font/google";
 import Head from "next/head";
 import Nav from "@/components/Nav";
 
-const roboto = Roboto_Condensed({
+const roboto = Roboto({
   subsets: ["latin"],
   weight: ["400", "700"],
 });

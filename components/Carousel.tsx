@@ -2,6 +2,7 @@ import { useRef, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Burger from "../public/burger.jpg";
 import Image, { StaticImageData } from "next/image";
+import CategoryHeader from "./CategoryHeader";
 
 const card = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -50,55 +51,56 @@ const Carousel = ({ images, type }: CarouselProps) => {
   }, []);
 
   return (
-    <div className=" mb-24  -z-20 ">
-      <h5 className="ml-2 font-bold text-2xl tracking-wider mb-1">
-        Popular Menu Items
-      </h5>
-      <p className="ml-2 mb-5 tracking-wide">
-        Hand picked by our beloved supporters
-      </p>
-      <motion.div
-        ref={carousel}
-        className="cursor-grab overflow-hidden -z-20"
-        whileTap={{ cursor: "grabbing" }}
-        style={{ overflowY: "hidden" }}
-      >
+    <div className=" mb-24 -z-20 ">
+      <div className="bg-white py-8">
+        <div className="pl-1 pb-2">
+          <CategoryHeader
+            headerText="Popular Menu Items"
+            subText="Hand picked by our supporters"
+          />
+        </div>
         <motion.div
-          className="flex -z-20"
-          drag="x"
-          dragConstraints={{ right: 0, left: -width }}
+          ref={carousel}
+          className="cursor-grab overflow-hidden -z-20"
+          whileTap={{ cursor: "grabbing" }}
+          style={{ overflowY: "hidden" }}
         >
-          {images.map((img, index) => {
-            return (
-              <div>
-                <motion.div
-                  key={index}
-                  className="min-w-[16rem] min-h-[16rem]  m-1 -z-20 relative  pb-2  bg-white "
-                >
-                  <Image
-                    src={img}
-                    alt="burger"
-                    className="-z-30"
-                    layout="fill"
-                    objectFit="fill"
-                    style={{
-                      pointerEvents: "none",
-                    }}
-                  />
-                </motion.div>
-                <div className="p-2">
-                  <div>
-                    <h6 className="text-lg font-bold tracking-wide">
-                      Bacon Burger
-                    </h6>
-                    <p className="text-lg  text-yellow-500/75">R90</p>
+          <motion.div
+            className="flex -z-20"
+            drag="x"
+            dragConstraints={{ right: 0, left: -width }}
+          >
+            {images.map((img, index) => {
+              return (
+                <div className="flex flex-col">
+                  <motion.div
+                    key={index}
+                    className="min-w-[16rem] min-h-[16rem]  m-1 z-50 relative  pb-2  "
+                  >
+                    <Image
+                      src={img}
+                      alt="burger"
+                      className="z-30"
+                      layout="fill"
+                      style={{
+                        pointerEvents: "none",
+                      }}
+                    />
+                  </motion.div>
+                  <div className="p-2">
+                    <div>
+                      <h6 className="text-lg font-bold tracking-wide">
+                        Bacon Burger
+                      </h6>
+                      <p className="text-lg  text-yellow-500/75">R90</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </motion.div>
         </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 };
