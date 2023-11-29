@@ -65,7 +65,7 @@ const EventCarousel = ({ images }: CarouselProps) => {
         >
           {images.map((img, index) => {
             return (
-              <ItemDrawer image={img}>
+              <ItemDrawer img={img}>
                 <motion.div
                   key={index}
                   className="min-w-[13rem] min-h-[13rem]  m-2 rounded-lg card-shadow -z-50 relative 
