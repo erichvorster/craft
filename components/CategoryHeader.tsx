@@ -7,7 +7,7 @@ type CategoryHeaderProps = {
 
 const CategoryHeader = ({ headerText, subText }: CategoryHeaderProps) => {
   return (
-    <>
+    <div className="mb-8">
       <div className="py-1 text-3xl font-bold border-primary tracking-wider text-foreground">
         {headerText}
       </div>
@@ -16,7 +16,7 @@ const CategoryHeader = ({ headerText, subText }: CategoryHeaderProps) => {
           <p>{subText}</p>
         </div>
       )}
-    </>
+    </div>
   );
 };
 

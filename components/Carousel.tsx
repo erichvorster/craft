@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Burger from "../public/burger.jpg";
 import Image, { StaticImageData } from "next/image";
 import CategoryHeader from "./CategoryHeader";
+import { ItemDrawer } from "./ItemDrawer";
 
 const card = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -72,30 +73,32 @@ const Carousel = ({ images, type }: CarouselProps) => {
           >
             {images.map((img, index) => {
               return (
-                <div className="flex flex-col">
-                  <motion.div
-                    key={index}
-                    className="min-w-[16rem] min-h-[16rem]  m-1 z-50 relative  pb-2  "
-                  >
-                    <Image
-                      src={img}
-                      alt="burger"
-                      className="z-30"
-                      layout="fill"
-                      style={{
-                        pointerEvents: "none",
-                      }}
-                    />
-                  </motion.div>
-                  <div className="p-2">
-                    <div>
-                      <h6 className="text-lg font-bold tracking-wide">
-                        Bacon Burger
-                      </h6>
-                      <p className="text-lg  text-yellow-500/75">R90</p>
+                <ItemDrawer img={img}>
+                  <div className="flex flex-col">
+                    <motion.div
+                      key={index}
+                      className="min-w-[16rem] min-h-[16rem]  m-1 z-40 relative  pb-2  "
+                    >
+                      <Image
+                        src={img}
+                        alt="burger"
+                        className="-z-30"
+                        layout="fill"
+                        style={{
+                          pointerEvents: "none",
+                        }}
+                      />
+                    </motion.div>
+                    <div className="p-2">
+                      <div>
+                        <h6 className="text-lg font-bold tracking-wide">
+                          Bacon Burger
+                        </h6>
+                        <p className="text-lg  text-yellow-500/75">R90</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </ItemDrawer>
               );
             })}
           </motion.div>

@@ -24,6 +24,7 @@ import Gin from "@/components/Gin";
 import Burgers from "@/components/Burgers";
 import PromotionItem from "@/components/PromotionItem";
 import { Button } from "@/components/ui/button";
+import Cap from "../public/cap.jpg";
 
 export default function Home() {
   const [scrolledToTop, setScrolledToTop] = useState(true);
@@ -119,7 +120,7 @@ export default function Home() {
           <TabsContent value="account" className="pt-12">
             {activeTab === 1 && (
               <>
-                <div className="mb-12">
+                <div className="mb-24">
                   <h1 className="text-6xl mb-2 font-bold">
                     CAPITAL
                     <br /> CRAFT
@@ -131,9 +132,12 @@ export default function Home() {
                   <Button className="mt-6 rounded-lg w-full px-12 bg-background border-2 border-foreground  text-foreground font-bold text-md">
                     Sign up
                   </Button>
+                  <div className="mt-8">
+                    <Image src={Cap} alt="cap" className="rounded-lg" />
+                  </div>
                 </div>
 
-                <ActionButton />
+                {/* <ActionButton /> */}
                 <Carousel images={popularImages} type="Event" />
               </>
             )}
@@ -149,7 +153,7 @@ export default function Home() {
                 <Snacks />
               </div>
             )}
-            <PromotionItem />
+
             {(activeTab === 1 || activeTab === 4) && (
               <div className="mt-24">
                 <Bowls />
@@ -166,18 +170,15 @@ export default function Home() {
               </div>
             )}
 
-            {activeTab === 1 && (
+            {/* {activeTab === 1 && (
               <div className="mt-24">
                 <EventCarousel images={eventImages} />
               </div>
-            )}
+            )} */}
           </TabsContent>
           <TabsContent value="password" className="pt-12">
             {(activeTab === 1 || activeTab === 2) && (
               <>
-                <h4 className="tracking-widest text-6xl font-extrabold text-center">
-                  ICE COLD BEER
-                </h4>
                 <div className="mt-4">
                   <Beer />
                 </div>
