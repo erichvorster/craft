@@ -18,6 +18,7 @@ const CategoryNav = ({
   const scrollContainerRef = useRef<HTMLDivElement | null>(null);
   const [isScrolledToLeft, setIsScrolledToLeft] = useState(true);
   const [isScrolledToRight, setIsScrolledToRight] = useState(false);
+  const touchStartX = useRef<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -62,8 +63,31 @@ const CategoryNav = ({
     }
   };
 
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (touchStartX.current !== null) {
+      const touchEndX = e.touches[0].clientX;
+      const deltaX = touchEndX - touchStartX.current;
+
+      if (deltaX > 50) {
+        handleScrollLeft();
+      } else if (deltaX < -50) {
+        handleScrollRight();
+      }
+
+      touchStartX.current = null;
+    }
+  };
+
   return (
-    <div className="overflow-hidden w-full h-full mt-4 px-1 relative z-0">
+    <div
+      className="overflow-hidden w-full h-full mt-4 px-1 relative z-0"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+    >
       <div
         className="overflow-x-scroll flex w-full h-full scrollbar-none"
         ref={scrollContainerRef}
@@ -72,18 +96,18 @@ const CategoryNav = ({
           className={`w-12 bg-gradient-to-r from-transparent to-background absolute right-0 h-full z-50 ${
             isScrolledToRight ? "hidden" : ""
           }`}
-          onClick={handleScrollRight}
+          onTouchStart={handleScrollRight}
         />
         <div
           className={`w-12 bg-gradient-to-r from-background to-transparent absolute left-0 h-full z-50 ${
             isScrolledToLeft ? "hidden" : ""
           }`}
-          onClick={handleScrollLeft}
+          onTouchStart={handleScrollLeft}
         />
         {tabs.map((tab, index) => (
           <motion.div
             key={index}
-            onClick={() => setActiveTab(index + 1)}
+            onTouchStart={() => setActiveTab(index + 1)}
             className={`${
               activeTab === index + 1 && " text-background"
             } mr-2 px-4 py-[1px] rounded whitespace-nowrap cursor-pointer text-md relative`}
