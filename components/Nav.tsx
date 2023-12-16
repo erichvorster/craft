@@ -1,14 +1,17 @@
+// Nav.js
+
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Separator } from "./ui/separator";
+
 import {
   Utensils,
   CalendarRange,
@@ -18,142 +21,131 @@ import {
   User,
 } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+
 const Nav = () => {
   const [activeTab, setActiveTab] = useState(1);
+  const [isMenuOpen, setMenuOpen] = useState(false);
+
+  const foodTabs = [
+    "ALL",
+    "BRUNCH",
+    "SNACKS",
+    "BOWLS & SALADS",
+    "SANDWHICHES DOGS & LIGHTERMEALS",
+    "BURGERS",
+    "WINGS",
+    "RIBS",
+    "STEAK",
+    "DESERT",
+    "KIDIES",
+  ];
+
+  const drinkTabs = ["ALL", "BEER", "GIN", "WHISKEY", "WINES", "SHOOTERS"];
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <div className="flex justify-between items-center py-4 px-3">
-      <img src="/download.png" alt="logo" width="35" height="35" />
-      <Sheet>
-        <SheetTrigger>
-          <div className="cursor-pointer">
-            <div className=" h-[3px] w-[25px] bg-primary mb-1"></div>
-            <div className=" h-[3px] w-[25px] bg-primary mb-1"></div>
-            <div className=" h-[3px] w-[25px] bg-primary mb-1"></div>
-          </div>
-        </SheetTrigger>
-        <SheetContent className="bg-secondary">
-          <SheetHeader>
-            <SheetTitle></SheetTitle>
-            <SheetDescription className="text-left ">
-              <div className=" h-full relative">
-                <h1 className="text-primary text-2xl font-bold flex items-center">
-                  CAPITAL CRAFT{" "}
-                  <img
-                    src="/download.png"
-                    alt="logo"
-                    width="40"
-                    height="40"
-                    className="ml-4"
-                  />
-                </h1>
-                <ul className="mt-12">
-                  <Link href="/">
-                    <li
-                      onClick={() => setActiveTab(1)}
-                      className={`text-primary text-xl flex items-center p-2 rounded-md cursor-pointer ${
-                        activeTab === 1 && "bg-yellow-300/25 "
-                      }`}
-                    >
-                      <div
-                        className={`p-2 rounded-full mr-2 ${
-                          activeTab == 1 && "bg-yellow-500/75"
-                        }`}
-                      >
-                        <Utensils color="#0D061D" size={22} />
-                      </div>
-                      <p
-                        className={`${activeTab === 1 && "text-yellow-800/75"}`}
-                      >
-                        Menu
-                      </p>
-                    </li>
-                  </Link>
-                  <Link href="/Specials">
-                    <li
-                      onClick={() => setActiveTab(2)}
-                      className={`text-primary text-xl flex items-center p-2 rounded-md cursor-pointer ${
-                        activeTab === 2 && "bg-yellow-300/25 "
-                      }`}
-                    >
-                      <div
-                        className={`p-2 rounded-full mr-2 ${
-                          activeTab == 2 && "bg-yellow-500/75"
-                        }`}
-                      >
-                        <Gem color="#0D061D" size={22} />
-                      </div>
-                      <p
-                        className={`${activeTab === 2 && "text-yellow-800/75"}`}
-                      >
-                        Specials
-                      </p>
-                    </li>
-                  </Link>
-                  <Link href="/Events">
-                    <li
-                      onClick={() => setActiveTab(3)}
-                      className={`text-primary text-xl flex items-center p-2 rounded-md cursor-pointer ${
-                        activeTab === 3 && "bg-yellow-300/25 "
-                      }`}
-                    >
-                      <div
-                        className={`p-2 rounded-full mr-2 ${
-                          activeTab == 3 && "bg-yellow-500/75"
-                        }`}
-                      >
-                        <CalendarRange color="#0D061D" size={22} />
-                      </div>
-                      <p
-                        className={`${activeTab === 3 && "text-yellow-800/75"}`}
-                      >
-                        Events
-                      </p>
-                    </li>
-                  </Link>
-                  <Link href="/Bookings">
-                    <li
-                      onClick={() => setActiveTab(4)}
-                      className={`text-primary text-xl flex items-center p-2 rounded-md cursor-pointer ${
-                        activeTab === 4 && "bg-yellow-300/25 "
-                      }`}
-                    >
-                      <div
-                        className={`p-2 rounded-full mr-2 ${
-                          activeTab == 4 && "bg-yellow-500/75"
-                        }`}
-                      >
-                        <BookOpenCheck color="#0D061D" size={22} />
-                      </div>
-                      <p
-                        className={`${activeTab === 4 && "text-yellow-800/75"}`}
-                      >
-                        Bookings
-                      </p>
-                    </li>
-                  </Link>
-                </ul>
-              </div>
+    <div className="relative h-full z-50">
+      <div className="flex justify-between items-center">
+        <header className="text-primary text-2xl font-bold flex items-center p-4">
+          CAPITAL CRAFT{" "}
+          <img
+            src="/download.png"
+            alt="logo"
+            width="40"
+            height="40"
+            className="ml-4"
+          />
+        </header>
 
-              <ul className="absolute bottom-5">
-                <li
-                  className={`text-primary text-xl flex items-center p-2 rounded-md cursor-pointer ${
-                    activeTab === 4 && "bg-yellow-300/25 "
-                  }`}
+        <div
+          className="burger-menu cursor-pointer p-4 z-50 relative mr-4 rounded-full border"
+          onTouchStart={toggleMenu}
+        >
+          <div
+            className={`burger-line bg-black  ${
+              isMenuOpen ? "rotate-45  bg-neutral-300  " : "-translate-y-[2px]"
+            }`}
+          ></div>
+
+          <div
+            className={`burger-line bg-black  ${
+              isMenuOpen ? "-rotate-45 bg-neutral-300  " : "translate-y-[2px]"
+            }`}
+          ></div>
+        </div>
+      </div>
+
+      {isMenuOpen && (
+        <div
+          className="overlay fixed inset-0 bg-black bg-opacity-50 z-40"
+          onClick={toggleMenu}
+        >
+          <nav className="menu fixed z-40 top-0 right-0 h-full w-full bg-foreground p-4">
+            <header className="text-white text-2xl font-bold flex items-center">
+              CAPITAL CRAFT{" "}
+              <img
+                src="/download.png"
+                alt="logo"
+                width="40"
+                height="40"
+                className="ml-4"
+              />
+            </header>
+            <ul className="mt-20">
+              <Link href="/">
+                <Accordion type="single" collapsible className="text-white">
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger>Food</AccordionTrigger>
+                    <AccordionContent>
+                      {foodTabs.map((tab, index) => (
+                        <div className="flex flex-col ">
+                          <p className="text-sm py-2 pl-3 text-neutral-400">
+                            {tab}
+                          </p>
+                        </div>
+                      ))}
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem value="item-2">
+                    <AccordionTrigger>Drinks</AccordionTrigger>
+                    <AccordionContent>
+                      {drinkTabs.map((tab, index) => (
+                        <div className="flex flex-col ">
+                          <p className="text-sm py-2 pl-3 text-neutral-400">
+                            {tab}
+                          </p>
+                        </div>
+                      ))}
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </Link>
+              <Link href="/Specials"></Link>
+              <Link href="/Events">
+                <p
+                  className=" text-white
+          py-4"
                 >
-                  <div
-                    className={`p-2 rounded-full mr-2 ${"bg-yellow-500/75"}`}
-                  >
-                    <User2 color="#0D061D" size={22} />
-                  </div>
-                  <p>Jan Raap</p>
-                </li>
-              </ul>
-            </SheetDescription>
-          </SheetHeader>
-        </SheetContent>
-      </Sheet>
+                  Events
+                </p>
+                <Separator />
+              </Link>
+              <Link href="/Bookings">
+                <p
+                  className=" text-white
+          py-4"
+                >
+                  Bookings
+                </p>
+                <Separator />
+              </Link>
+            </ul>
+          </nav>
+        </div>
+      )}
     </div>
   );
 };

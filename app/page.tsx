@@ -117,7 +117,7 @@ export default function Home() {
                       transition={{ type: "tween", duration: 0.2 }}
                     />
                   )}
-                  <p className="py-[1px] z-50 relative text-gray ">{tab}</p>
+                  <p className="py-[1px] z-40 relative text-gray ">{tab}</p>
                 </motion.div>
               ))}
             </div>
