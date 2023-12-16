@@ -158,3 +158,32 @@ a {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+/* Burger */
+
+
+
+.burger-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 40px;
+  width:40px;
+}
+
+.burger-line {
+  width: 18px;
+  height: 3px;
+ 
+  transition: transform 0.1s ease-in-out;
+  
+}
+
+.rotate-45 {
+  transform: rotate(-45deg);
+}
+
+.-rotate-45 {
+  transform: rotate(45deg);
+}
