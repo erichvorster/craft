@@ -30,6 +30,7 @@ export default function Home() {
   const [scrolledToTop, setScrolledToTop] = useState(true);
   const [isFood, setIsFood] = useState(true);
   const [activeTab, setActiveTab] = useState(1);
+  const [activePage, setActivePage] = useState(1);
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const foodTabs = [
@@ -45,6 +46,8 @@ export default function Home() {
     "DESERT",
     "KIDIES",
   ];
+
+  const tabs = ["Food", "Drink"];
   const drinkTabs = ["ALL", "BEER", "GIN", "WHISKEY", "WINES", "SHOOTERS"];
 
   useEffect(() => {
@@ -95,103 +98,116 @@ export default function Home() {
           //     : "box-shadow transition-shadow duration-200 ease-in-out"
           // }`}
           >
-            <TabsList className="w-full">
-              <TabsTrigger
-                value="account"
-                className="w-full"
-                onClick={() => setIsFood(true)}
-              >
-                FOOD
-              </TabsTrigger>
-              <TabsTrigger
-                value="password"
-                className="w-full"
-                onClick={() => setIsFood(false)}
-              >
-                DRINKS
-              </TabsTrigger>
-            </TabsList>
+            <div
+              className=" bg-white rounded-lg p-1 h-12
+          flex"
+            >
+              {tabs.map((tab, index) => (
+                <motion.div
+                  key={index}
+                  onTouchStart={() => setActivePage(index + 1)}
+                  className={`${
+                    activePage === index + 1 && " text-background"
+                  } mr-2 px-4 py-[1px] w-full rounded whitespace-nowrap text-center text-gray-300 flex items-center justify-center cursor-pointer text-md relative`}
+                >
+                  {activePage === index + 1 && (
+                    <motion.div
+                      layoutId="bubbleNav"
+                      className="absolute inset-0 z-40 text-white bg-foreground rounded-lg  flex justify-center "
+                      transition={{ type: "tween", duration: 0.2 }}
+                    />
+                  )}
+                  <p className="py-[1px] z-50 relative text-gray ">{tab}</p>
+                </motion.div>
+              ))}
+            </div>
             <CategoryNav
               tabs={isFood ? foodTabs : drinkTabs}
               activeTab={activeTab}
               setActiveTab={setActiveTab}
             />
           </div>
-          <TabsContent value="account" className="pt-12">
-            {activeTab === 1 && (
-              <>
-                <div className="mb-24">
-                  <h1 className="text-6xl mb-2 font-bold">
-                    CAPITAL
-                    <br /> CRAFT
-                  </h1>
-                  <p className="text-md">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Commodi, perspiciatis?
-                  </p>
-                  <Button className="mt-6 rounded-lg w-full px-12 bg-background border-2 border-foreground  text-foreground font-bold text-md">
-                    Sign up
-                  </Button>
-                  <div className="mt-8">
-                    <Image src={Cap} alt="cap" className="rounded-lg" />
+
+          {activePage === 1 && (
+            <div className="pt-12">
+              {activeTab === 1 && (
+                <>
+                  <div className="mb-24">
+                    <h1 className="text-6xl mb-2 font-bold">
+                      CAPITAL
+                      <br /> CRAFT
+                    </h1>
+                    <p className="text-md">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Commodi, perspiciatis?
+                    </p>
+                    <Button className="mt-6 rounded-lg w-full px-12 bg-background border-2 border-foreground  text-foreground font-bold text-md">
+                      Sign up
+                    </Button>
+                    <div className="mt-8">
+                      <Image src={Cap} alt="cap" className="rounded-lg" />
+                    </div>
                   </div>
+
+                  {/* <ActionButton /> */}
+                  <Carousel images={popularImages} type="Event" />
+                </>
+              )}
+
+              {(activeTab === 1 || activeTab === 2) && (
+                <div className="mt-24">
+                  <Brunch />
                 </div>
+              )}
 
-                {/* <ActionButton /> */}
-                <Carousel images={popularImages} type="Event" />
-              </>
-            )}
-
-            {(activeTab === 1 || activeTab === 2) && (
-              <div className="mt-24">
-                <Brunch />
-              </div>
-            )}
-
-            {(activeTab === 1 || activeTab === 3) && (
-              <div className="mt-24">
-                <Snacks />
-              </div>
-            )}
-
-            {(activeTab === 1 || activeTab === 4) && (
-              <div className="mt-24">
-                <Bowls />
-              </div>
-            )}
-            {(activeTab === 1 || activeTab === 5) && (
-              <div className="mt-24">
-                <Sandwhiches />
-              </div>
-            )}
-            {(activeTab === 1 || activeTab === 6) && (
-              <div className="mt-24">
-                <Burgers />
-              </div>
-            )}
-
-            {/* {activeTab === 1 && (
-              <div className="mt-24">
-                <EventCarousel images={eventImages} />
-              </div>
-            )} */}
-          </TabsContent>
-          <TabsContent value="password" className="pt-12">
-            {(activeTab === 1 || activeTab === 2) && (
-              <>
-                <div className="mt-4">
-                  <Beer />
+              {(activeTab === 1 || activeTab === 3) && (
+                <div className="mt-24">
+                  <Snacks />
                 </div>
-              </>
-            )}
-            {activeTab === 3 && (
-              <>
-                <div className="mt-4">
-                  <Gin />
+              )}
+
+              {(activeTab === 1 || activeTab === 4) && (
+                <div className="mt-24">
+                  <Bowls />
                 </div>
-              </>
-            )}
-          </TabsContent>
+              )}
+              {(activeTab === 1 || activeTab === 5) && (
+                <div className="mt-24">
+                  <Sandwhiches />
+                </div>
+              )}
+              {(activeTab === 1 || activeTab === 6) && (
+                <div className="mt-24">
+                  <Burgers />
+                </div>
+              )}
+
+              {/* {activeTab === 1 && (
+               <div className="mt-24">
+                 <EventCarousel images={eventImages} />
+               </div>
+             )} */}
+            </div>
+          )}
+
+          {activePage === 2 && (
+            <div className="pt-12">
+              {(activeTab === 1 || activeTab === 2) && (
+                <>
+                  <div className="mt-4">
+                    <Beer />
+                  </div>
+                </>
+              )}
+              {activeTab === 3 && (
+                <>
+                  <div className="mt-4">
+                    <Gin />
+                  </div>
+                </>
+              )}
+            </div>
+          )}
         </Tabs>
       </div>
     </main>
