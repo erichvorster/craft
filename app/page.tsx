@@ -1,54 +1,56 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Nav from "@/components/Nav";
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import CategoryHeader from "@/components/CategoryHeader";
+
 import CategoryNav from "@/components/CategoryNav";
 import useScrollDirection from "@/components/Hooks/useScrollDirection";
-import AllItems from "@/components/AllItems";
+
 import Snacks from "@/components/Snacks";
 import Bowls from "@/components/Bowls";
 import Brunch from "@/components/Brunch";
 import Sandwhiches from "@/components/Sandwhiches";
-import { ItemDrawer } from "@/components/ItemDrawer";
+
 import Carousel from "@/components/Carousel";
 import Beer from "@/components/Beer";
-import eventImages from "../public/eventImages";
 import popularImages from "../public/popularImages";
-import EventCarousel from "@/components/EventCarousel";
-import ActionButton from "@/components/ActionButton";
+
 import Gin from "@/components/Gin";
 import Burgers from "@/components/Burgers";
-import PromotionItem from "@/components/PromotionItem";
+
 import { Button } from "@/components/ui/button";
 import Cap from "../public/cap.jpg";
 
+import { useIsFoodContext } from "@/components/context/IsFoodContext";
+import { useTabsContext } from "@/components/context/TabsContext";
+import { usePageContext } from "@/components/context/PageContext";
+
 export default function Home() {
   const [scrolledToTop, setScrolledToTop] = useState(true);
-  const [isFood, setIsFood] = useState(true);
-  const [activeTab, setActiveTab] = useState(1);
-  const [activePage, setActivePage] = useState(1);
+  const { activeTab, setActiveTab } = useTabsContext();
+  const { activePage, setActivePage } = usePageContext();
   const [scrollPosition, setScrollPosition] = useState(0);
+  const { isFood, setIsFood } = useIsFoodContext();
 
   const foodTabs = [
-    "ALL",
-    "BRUNCH",
-    "SNACKS",
-    "BOWLS & SALADS",
-    "SANDWHICHES DOGS & LIGHTERMEALS",
-    "BURGERS",
-    "WINGS",
-    "RIBS",
-    "STEAK",
-    "DESERT",
-    "KIDIES",
+    "All",
+    "Brunch",
+    "Snacks",
+    "Bowls & Salads",
+    "Sandwhiches Dogs & Lighter Meals",
+    "Burgers",
+    "Wings",
+    "Ribs",
+    "Steak",
+    "Desert",
+    "Kidies",
   ];
 
-  const tabs = ["Food", "Drink"];
-  const drinkTabs = ["ALL", "BEER", "GIN", "WHISKEY", "WINES", "SHOOTERS"];
+  const tabs = ["Food", "Drinks"];
+  const drinkTabs = ["All", "Beer", "Gin", "Whiskey", "Wines", "Shooters"];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -108,7 +110,7 @@ export default function Home() {
                   onTouchStart={() => setActivePage(index + 1)}
                   className={`${
                     activePage === index + 1 && " text-background"
-                  } mr-2 px-4 py-[1px] w-full rounded whitespace-nowrap text-center text-gray-300 flex items-center justify-center cursor-pointer text-md relative`}
+                  } mr-2 px-4 py-[1px] w-full rounded whitespace-nowrap text-center text-neutral-300 flex items-center justify-center cursor-pointer  relative`}
                 >
                   {activePage === index + 1 && (
                     <motion.div
@@ -117,12 +119,14 @@ export default function Home() {
                       transition={{ type: "tween", duration: 0.2 }}
                     />
                   )}
-                  <p className="py-[1px] z-40 relative text-gray ">{tab}</p>
+                  <p className="py-[1px] z-40 relative text-gray font-bold">
+                    {tab}
+                  </p>
                 </motion.div>
               ))}
             </div>
             <CategoryNav
-              tabs={isFood ? foodTabs : drinkTabs}
+              tabs={activePage === 1 ? foodTabs : drinkTabs}
               activeTab={activeTab}
               setActiveTab={setActiveTab}
             />

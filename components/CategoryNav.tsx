@@ -115,11 +115,11 @@ const CategoryNav = ({
             {activeTab === index + 1 && (
               <motion.span
                 layoutId="bubble"
-                className="absolute inset-0 z-50 border-2 border-foreground rounded-lg flex justify-center"
+                className="absolute inset-0 z-20 bg-yellow-500/50 rounded-lg flex justify-center"
                 transition={{ type: "tween", duration: 0.2 }}
               />
             )}
-            <p className="py-[1px]">{tab}</p>
+            <p className="py-[1px] relative z-30 font-bold">{tab}</p>
           </motion.div>
         ))}
       </div>

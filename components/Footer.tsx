@@ -9,20 +9,20 @@ import { Separator } from "./ui/separator";
 
 const Footer = () => {
   const foodTabs = [
-    "ALL",
-    "BRUNCH",
-    "SNACKS",
-    "BOWLS & SALADS",
-    "SANDWHICHES DOGS & LIGHTERMEALS",
-    "BURGERS",
-    "WINGS",
-    "RIBS",
-    "STEAK",
-    "DESERT",
-    "KIDIES",
+    "All",
+    "Brunch",
+    "Snacks",
+    "Bowls & Salads",
+    "Sandwhiches Dogs & Lighter Meals",
+    "Burgers",
+    "Wings",
+    "Ribs",
+    "Steak",
+    "Desert",
+    "Kidies",
   ];
 
-  const drinkTabs = ["ALL", "BEER", "GIN", "WHISKEY", "WINES", "SHOOTERS"];
+  const drinkTabs = ["All", "Beer", "Gin", "Whiskey", "Wines", "Shooters"];
   return (
     <>
       <div className=" bg-foreground mt-28 px-6 pt-12 pb-6 pb-24">
@@ -59,21 +59,21 @@ const Footer = () => {
           >
             Events
           </p>
-          <Separator />
+          <Separator className="bg-neutral-600" />
           <p
             className=" text-white
           py-4"
           >
             Bookings
           </p>
-          <Separator />
+          <Separator className="bg-neutral-600" />
           <p
             className=" text-white
           py-4"
           >
             Contact
           </p>
-          <Separator />
+          <Separator className="bg-neutral-600" />
         </div>
         <div className="text-center mt-24">
           <p className="text-neutral-500 text-sm">Powered by Menq</p>

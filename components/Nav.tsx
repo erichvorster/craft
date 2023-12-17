@@ -11,39 +11,38 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Separator } from "./ui/separator";
-
-import {
-  Utensils,
-  CalendarRange,
-  BookOpenCheck,
-  Gem,
-  User2,
-  User,
-} from "lucide-react";
-import Image from "next/image";
+import { useTabsContext } from "../components/context/TabsContext";
+import { usePageContext } from "./context/PageContext";
 
 const Nav = () => {
-  const [activeTab, setActiveTab] = useState(1);
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const { activePage, setActivePage } = usePageContext();
+  const { activeTab, setActiveTab } = useTabsContext();
 
   const foodTabs = [
-    "ALL",
-    "BRUNCH",
-    "SNACKS",
-    "BOWLS & SALADS",
-    "SANDWHICHES DOGS & LIGHTERMEALS",
-    "BURGERS",
-    "WINGS",
-    "RIBS",
-    "STEAK",
-    "DESERT",
-    "KIDIES",
+    "All",
+    "Brunch",
+    "Snacks",
+    "Bowls & Salads",
+    "Sandwhiches Dogs & Lighter Meals",
+    "Burgers",
+    "Wings",
+    "Ribs",
+    "Steak",
+    "Desert",
+    "Kidies",
   ];
 
-  const drinkTabs = ["ALL", "BEER", "GIN", "WHISKEY", "WINES", "SHOOTERS"];
+  const drinkTabs = ["All", "Beer", "Gin", "Whiskey", "Wines", "Shooters"];
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
+  };
+
+  const toggleMenuItem = (page: number, tab: number) => {
+    setActivePage(page);
+    setActiveTab(tab);
+    toggleMenu();
   };
 
   return (
@@ -79,10 +78,7 @@ const Nav = () => {
       </div>
 
       {isMenuOpen && (
-        <div
-          className="overlay fixed inset-0 bg-black bg-opacity-50 z-40"
-          onClick={toggleMenu}
-        >
+        <div className="overlay fixed inset-0 bg-black bg-opacity-50 z-40">
           <nav className="menu fixed z-40 top-0 right-0 h-full w-full bg-foreground p-4">
             <header className="text-white text-2xl font-bold flex items-center">
               CAPITAL CRAFT{" "}
@@ -95,52 +91,70 @@ const Nav = () => {
               />
             </header>
             <ul className="mt-20">
-              <Link href="/">
-                <Accordion type="single" collapsible className="text-white">
-                  <AccordionItem value="item-1">
-                    <AccordionTrigger>Food</AccordionTrigger>
-                    <AccordionContent>
-                      {foodTabs.map((tab, index) => (
+              <Accordion
+                type="single"
+                collapsible
+                className="text-white relative z-50"
+              >
+                <AccordionItem value="item-1">
+                  <AccordionTrigger className="relative z-50">
+                    Food
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    {foodTabs.map((tab, index) => (
+                      <Link
+                        href="/"
+                        onTouchStart={() => {
+                          toggleMenuItem(1, index + 1);
+                        }}
+                      >
                         <div className="flex flex-col ">
                           <p className="text-sm py-2 pl-3 text-neutral-400">
                             {tab}
                           </p>
                         </div>
-                      ))}
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem value="item-2">
-                    <AccordionTrigger>Drinks</AccordionTrigger>
-                    <AccordionContent>
-                      {drinkTabs.map((tab, index) => (
+                      </Link>
+                    ))}
+                  </AccordionContent>
+                </AccordionItem>
+                <AccordionItem value="item-2">
+                  <AccordionTrigger>Drinks</AccordionTrigger>
+                  <AccordionContent>
+                    {drinkTabs.map((tab, index) => (
+                      <Link
+                        href="/"
+                        onTouchStart={() => {
+                          toggleMenuItem(2, index + 1);
+                        }}
+                      >
                         <div className="flex flex-col ">
                           <p className="text-sm py-2 pl-3 text-neutral-400">
                             {tab}
                           </p>
                         </div>
-                      ))}
-                    </AccordionContent>
-                  </AccordionItem>
-                </Accordion>
-              </Link>
-              <Link href="/Specials"></Link>
-              <Link href="/Events">
+                      </Link>
+                    ))}
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+
+              <Link href="/Events" onTouchStart={() => toggleMenu()}>
                 <p
                   className=" text-white
           py-4"
                 >
                   Events
                 </p>
-                <Separator />
+                <Separator className="bg-neutral-600" />
               </Link>
-              <Link href="/Bookings">
+              <Link href="/Bookings" onTouchStart={() => toggleMenu()}>
                 <p
                   className=" text-white
           py-4"
                 >
                   Bookings
                 </p>
-                <Separator />
+                <Separator className="bg-neutral-600" />
               </Link>
             </ul>
           </nav>
