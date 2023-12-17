@@ -2,8 +2,10 @@ import Footer from "@/components/Footer";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Roboto_Condensed, Roboto } from "next/font/google";
-import Head from "next/head";
 import Nav from "@/components/Nav";
+import { IsFoodProvider } from "@/components/context/IsFoodContext";
+import { TabsProvider } from "@/components/context/TabsContext";
+import { PageProvider } from "@/components/context/PageContext";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -23,9 +25,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <Nav />
-        {children}
-        <Footer />
+        <IsFoodProvider>
+          <PageProvider>
+            <TabsProvider>
+              <Nav />
+              {children}
+              <Footer />
+            </TabsProvider>
+          </PageProvider>
+        </IsFoodProvider>
       </body>
     </html>
   );
