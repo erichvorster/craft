@@ -13,6 +13,7 @@ import {
 import { Separator } from "./ui/separator";
 import { useTabsContext } from "../components/context/TabsContext";
 import { usePageContext } from "./context/PageContext";
+import Btn from "./Btn";
 
 const Nav = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -90,6 +91,9 @@ const Nav = () => {
                 className="ml-4"
               />
             </header>
+            <div>
+              <Btn btnText="Login" type="dark" />
+            </div>
             <ul className="mt-20">
               <Accordion
                 type="single"

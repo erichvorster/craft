@@ -11,7 +11,7 @@ type ItemCardProps = {
 
 const ItemCard = ({ img, food }: ItemCardProps) => {
   return (
-    <div className="flex flex-col  h-full rounded">
+    <div className="flex flex-col  h-full rounded mb-4">
       <div className="relative">
         <div className="px-2 py-1 flex rounded bg-yellow-300/75 border-2 border-black card-shadow absolute top-2 right-2">
           <>
@@ -26,17 +26,23 @@ const ItemCard = ({ img, food }: ItemCardProps) => {
 
           <Image src={newItem} height={20} width={25} alt="icon" />
         </div>
-        <div className="h-[250px] w-auto">
-          <Image src={img} layout="fill" objectFit="cover" alt="brunch" />
+        <div className="h-[200px] w-auto rounded-lg">
+          <Image
+            src={img}
+            layout="fill"
+            objectFit="cover"
+            alt="brunch"
+            className="rounded-lg"
+          />
         </div>
       </div>
       <div>
-        <div className="py-2 px-1">
+        <div className="pt-2">
           <h5 className="text-md tracking-wide font-bold">{food?.name}</h5>
-          <h5 className="text-md text-zinc-500">Brunch</h5>
-          <h5 className="text-lg text-yellow-500 mt-1">
-            R {food?.fixedPrice?.price}
-          </h5>
+          <h5 className="text-sm text-neutral-500">Brunch</h5>
+          <p className="text-md text-black mt-1 bg-yellow-500/75 inline-block py-[1px] px-3 rounded-full font-bold">
+            R{food?.fixedPrice?.price}
+          </p>
         </div>
       </div>
     </div>
