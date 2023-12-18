@@ -43,7 +43,7 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
 
       <Drawer.Portal>
         <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-        <Drawer.Content className="bg-popover text-zinc-200 flex flex-col rounded-t-[10px] h-[96%] mt-24 fixed bottom-0 left-0 right-0 z-40">
+        <Drawer.Content className="bg-background text-zinc-200 flex flex-col rounded-t-[10px] h-[96%]  fixed bottom-0 left-0 right-0 z-40">
           {beer && (
             <>
               <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-300 mb-4 mt-4" />
@@ -126,35 +126,29 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
 
           {food && (
             <>
-              <div className="mx-auto w-24 h-1 flex-shrink-0 rounded-full bg-zinc-300 mb-4 mt-4" />
+              <div className="mx-auto w-24 h-1 flex-shrink-0 rounded-full bg-zinc-300 absolute left-1/2 transform -translate-x-1/2 z-50 top-5" />
               <div>
                 <div className="">
-                  <div className="h-[400px] w-full relative rounded-lg">
+                  <div className="h-[400px] w-full mx-auto relative rounded-lg">
                     <Image
                       src={img}
                       alt="beer"
                       layout="fill"
                       objectFit="cover"
-                      className="mx-auto p-4 rounded-lg"
+                      className="mx-auto rounded-tl-lg rounded-tr-lg"
                     />
                   </div>
-                  <div className="m-0 mb-2">
-                    <table className="w-full">
-                      <tbody>
-                        <tr>
-                          <td className="border-t-2 border-r-2 border-b-2 border-zinc-200 w-[80%] text-3xl p-4">
-                            {food.name}
-                          </td>
-                          <td className="border-t-2 border-r-0 border-b-2 border-zinc-200 w-[20%] text-3xl font-bold text-foreground text-center text-black bg-yellow-500">
-                            R{food.fixedPrice.price}
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                  <div className="p-4">
-                    <p className="font-bold mb-1">Description</p>
-                    <p>{food.description}</p>
+                  <div className="px-8 text-foreground mt-10">
+                    <div className="text-xl font-bold m-0 mb-2 ">
+                      {food.name}
+                    </div>
+                    <div className="mt-4">
+                      <p className="font-bold mb-1">Description</p>
+                      <p>{food.description}</p>
+                    </div>
+                    <div className="bg-yellow-500/75 inline-block py-2 px-8 rounded-full font-bold mt-5">
+                      R{food.fixedPrice.price}
+                    </div>
                   </div>
                 </div>
               </div>

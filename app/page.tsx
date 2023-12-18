@@ -154,7 +154,7 @@ export default function Home() {
                   </div>
 
                   {/* <ActionButton /> */}
-                  <Carousel images={popularImages} type="Event" />
+                  {/* <Carousel images={popularImages} type="Event" /> */}
                 </>
               )}
 
@@ -164,7 +164,7 @@ export default function Home() {
                 </div>
               )}
 
-              {(activeTab === 1 || activeTab === 3) && (
+              {/* {(activeTab === 1 || activeTab === 3) && (
                 <div className="mt-24">
                   <Snacks />
                 </div>
@@ -184,7 +184,7 @@ export default function Home() {
                 <div className="mt-24">
                   <Burgers />
                 </div>
-              )}
+              )} */}
 
               {/* {activeTab === 1 && (
                <div className="mt-24">
