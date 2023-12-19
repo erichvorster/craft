@@ -109,17 +109,17 @@ const CategoryNav = ({
             key={index}
             onTouchStart={() => setActiveTab(index + 1)}
             className={`${
-              activeTab === index + 1 && " text-background"
-            } mr-2 px-4 py-[1px] rounded whitespace-nowrap cursor-pointer text-md relative`}
+              activeTab === index + 1 && " "
+            } mr-2 px-4 py-[1px] rounded whitespace-nowrap cursor-pointer text-popover text-md relative`}
           >
             {activeTab === index + 1 && (
               <motion.span
                 layoutId="bubble"
-                className="absolute inset-0 z-20 bg-yellow-500/50 rounded-lg flex justify-center"
+                className="absolute inset-0 z-20 bg-popover-foreground rounded-lg flex justify-center"
                 transition={{ type: "tween", duration: 0.2 }}
               />
             )}
-            <p className="py-[1px] relative z-30 font-bold">{tab}</p>
+            <p className="py-[1px] relative  z-30 ">{tab}</p>
           </motion.div>
         ))}
       </div>

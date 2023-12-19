@@ -25,10 +25,10 @@ const Footer = () => {
   const drinkTabs = ["All", "Beer", "Gin", "Whiskey", "Wines", "Shooters"];
   return (
     <>
-      <div className=" bg-foreground mt-28 px-6 pt-12 pb-6 pb-24">
+      <div className=" bg-background mt-28 px-6 pt-12 pb-6 pb-24 border-t border-popover">
         <div className="flex items-center mb-8">
           <img src="/download.png" alt="logo" width="35" height="35" />
-          <p className="text-neutral-500 ml-2 text-sm">© 2023</p>
+          <p className="text-card-foreground ml-2 text-sm">© 2023</p>
         </div>
         <Accordion type="single" collapsible className="text-white">
           <AccordionItem value="item-1">
@@ -36,7 +36,9 @@ const Footer = () => {
             <AccordionContent>
               {foodTabs.map((tab, index) => (
                 <div className="flex flex-col ">
-                  <p className="text-sm py-2 pl-3 text-neutral-400">{tab}</p>
+                  <p className="text-sm py-2 pl-3 text-card-foreground">
+                    {tab}
+                  </p>
                 </div>
               ))}
             </AccordionContent>
@@ -46,7 +48,9 @@ const Footer = () => {
             <AccordionContent>
               {drinkTabs.map((tab, index) => (
                 <div className="flex flex-col ">
-                  <p className="text-sm py-2 pl-3 text-neutral-400">{tab}</p>
+                  <p className="text-sm py-2 pl-3 text-card-foreground">
+                    {tab}
+                  </p>
                 </div>
               ))}
             </AccordionContent>
@@ -54,29 +58,29 @@ const Footer = () => {
         </Accordion>
         <div>
           <p
-            className=" text-white
+            className=" text-foregrond
           py-4"
           >
             Events
           </p>
-          <Separator className="bg-neutral-600" />
+          <Separator className="bg-card-foreground" />
           <p
-            className=" text-white
+            className=" text-foregrond
           py-4"
           >
             Bookings
           </p>
-          <Separator className="bg-neutral-600" />
+          <Separator className="bg-card-foreground" />
           <p
-            className=" text-white
+            className=" text-foregrond
           py-4"
           >
             Contact
           </p>
-          <Separator className="bg-neutral-600" />
+          <Separator className="bg-card-foreground" />
         </div>
         <div className="text-center mt-24">
-          <p className="text-neutral-500 text-sm">Powered by Menq</p>
+          <p className="text-card-foreground text-sm">Powered by Menq</p>
         </div>
       </div>
     </>

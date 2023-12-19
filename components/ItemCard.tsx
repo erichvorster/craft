@@ -38,9 +38,11 @@ const ItemCard = ({ img, food }: ItemCardProps) => {
       </div>
       <div>
         <div className="pt-2">
-          <h5 className="text-md tracking-wide font-bold">{food?.name}</h5>
-          <h5 className="text-sm text-neutral-500">Brunch</h5>
-          <p className="text-md text-black mt-1 bg-yellow-500/75 inline-block py-[1px] px-3 rounded-full font-bold">
+          <h5 className="text-md tracking-wide textt-foreground">
+            {food?.name}
+          </h5>
+          <h5 className="text-sm text-card-foreground">Brunch</h5>
+          <p className="text-md text-black mt-1 text-popover bg-popover-foreground inline-block py-[1px] px-3 rounded-full">
             R{food?.fixedPrice?.price}
           </p>
         </div>
