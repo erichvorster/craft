@@ -13,7 +13,7 @@ const CategoryHeader = ({ headerText, subText }: CategoryHeaderProps) => {
       </div>
       {subText && (
         <div>
-          <p>{subText}</p>
+          <p className="text-card-foreground">{subText}</p>
         </div>
       )}
     </div>

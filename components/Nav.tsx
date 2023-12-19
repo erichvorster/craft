@@ -49,8 +49,8 @@ const Nav = () => {
   return (
     <div className="relative h-full z-50">
       <div className="flex justify-between items-center">
-        <header className="text-primary text-2xl font-bold flex items-center p-4">
-          CAPITAL CRAFT{" "}
+        <header className="text-2xl font-bold flex items-center  p-4">
+          <p className="text-foreground ">CAPITAL CRAFT</p>
           <img
             src="/download.png"
             alt="logo"
@@ -59,20 +59,23 @@ const Nav = () => {
             className="ml-4"
           />
         </header>
-
         <div
-          className="burger-menu cursor-pointer p-4 z-50 relative mr-4 rounded-full border"
+          className="burger-menu cursor-pointer p-4 z-50 relative mr-4 rounded-full border border-card-foreground"
           onTouchStart={toggleMenu}
         >
           <div
-            className={`burger-line bg-black  ${
-              isMenuOpen ? "rotate-45  bg-neutral-300  " : "-translate-y-[2px]"
+            className={`burger-line bg-card-foreground  ${
+              isMenuOpen
+                ? "rotate-45  bg-card-foreground   "
+                : "-translate-y-[2px]"
             }`}
           ></div>
 
           <div
-            className={`burger-line bg-black  ${
-              isMenuOpen ? "-rotate-45 bg-neutral-300  " : "translate-y-[2px]"
+            className={`burger-line bg-card-foreground   ${
+              isMenuOpen
+                ? "-rotate-45 bg-card-foreground   "
+                : "translate-y-[2px]"
             }`}
           ></div>
         </div>
@@ -80,8 +83,8 @@ const Nav = () => {
 
       {isMenuOpen && (
         <div className="overlay fixed inset-0 bg-black bg-opacity-50 z-40">
-          <nav className="menu fixed z-40 top-0 right-0 h-full w-full bg-foreground p-4">
-            <header className="text-white text-2xl font-bold flex items-center">
+          <nav className="menu fixed z-40 top-0 right-0 h-full w-full bg-background p-4">
+            <header className="text-foreground text-2xl font-bold flex items-center">
               CAPITAL CRAFT{" "}
               <img
                 src="/download.png"
@@ -91,7 +94,9 @@ const Nav = () => {
                 className="ml-4"
               />
             </header>
-            <div>
+            <div className="mt-10">
+              <Btn btnText="Sign up" type="light" />
+              <div className="mt-4" />
               <Btn btnText="Login" type="dark" />
             </div>
             <ul className="mt-20">
@@ -113,7 +118,7 @@ const Nav = () => {
                         }}
                       >
                         <div className="flex flex-col ">
-                          <p className="text-sm py-2 pl-3 text-neutral-400">
+                          <p className="text-sm py-2 pl-3 text-card-foreground">
                             {tab}
                           </p>
                         </div>
@@ -132,7 +137,7 @@ const Nav = () => {
                         }}
                       >
                         <div className="flex flex-col ">
-                          <p className="text-sm py-2 pl-3 text-neutral-400">
+                          <p className="text-sm py-2 pl-3 text-card-foreground">
                             {tab}
                           </p>
                         </div>
@@ -149,7 +154,7 @@ const Nav = () => {
                 >
                   Events
                 </p>
-                <Separator className="bg-neutral-600" />
+                <Separator className="bg-card-foreground" />
               </Link>
               <Link href="/Bookings" onTouchStart={() => toggleMenu()}>
                 <p
@@ -158,7 +163,7 @@ const Nav = () => {
                 >
                   Bookings
                 </p>
-                <Separator className="bg-neutral-600" />
+                <Separator className="bg-card-foreground" />
               </Link>
             </ul>
           </nav>

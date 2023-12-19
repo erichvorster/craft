@@ -23,6 +23,7 @@ import Burgers from "@/components/Burgers";
 
 import { Button } from "@/components/ui/button";
 import Cap from "../public/cap.jpg";
+import Btn from "@/components/Btn";
 
 import { useIsFoodContext } from "@/components/context/IsFoodContext";
 import { useTabsContext } from "@/components/context/TabsContext";
@@ -101,7 +102,7 @@ export default function Home() {
           // }`}
           >
             <div
-              className=" bg-white rounded-lg p-1 h-12
+              className="bg-card z-60 rounded-lg p-1 h-12
           flex"
             >
               {tabs.map((tab, index) => (
@@ -109,19 +110,17 @@ export default function Home() {
                   key={index}
                   onTouchStart={() => setActivePage(index + 1)}
                   className={`${
-                    activePage === index + 1 && " text-background"
-                  } mr-2 px-4 py-[1px] w-full rounded whitespace-nowrap text-center text-neutral-300 flex items-center justify-center cursor-pointer  relative`}
+                    activePage === index + 1 && "text-background"
+                  }  px-4 py-[1px] w-full rounded whitespace-nowrap text-center text-foreground flex items-center justify-center cursor-pointer  relative`}
                 >
                   {activePage === index + 1 && (
                     <motion.div
                       layoutId="bubbleNav"
-                      className="absolute inset-0 z-40 text-white bg-foreground rounded-lg  flex justify-center "
+                      className="absolute inset-0 z-40 text-white bg-card-foreground rounded-lg  flex justify-center "
                       transition={{ type: "tween", duration: 0.2 }}
                     />
                   )}
-                  <p className="py-[1px] z-40 relative text-gray font-bold">
-                    {tab}
-                  </p>
+                  <p className="py-[1px] z-40 relative text-gray ">{tab}</p>
                 </motion.div>
               ))}
             </div>
@@ -141,16 +140,16 @@ export default function Home() {
                       CAPITAL
                       <br /> CRAFT
                     </h1>
-                    <p className="text-md">
+                    <p className="text-md text-card-foreground">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Commodi, perspiciatis?
                     </p>
-                    <Button className="mt-6 rounded-lg w-full px-12 bg-background border-2 border-foreground  text-foreground font-bold text-md">
-                      Sign up
-                    </Button>
                     <div className="mt-8">
                       <Image src={Cap} alt="cap" className="rounded-lg" />
                     </div>
+                    {/* <div className="mt-12">
+                      <Btn btnText="Login" type="dark" />
+                    </div> */}
                   </div>
 
                   {/* <ActionButton /> */}

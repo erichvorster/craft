@@ -10,8 +10,8 @@ const Btn = ({ type, btnText }: btnProps) => {
     <button
       className={
         type === "light"
-          ? "p-4 w-full bg-background text-black rounded"
-          : "bg-foreground rounded p-4 border-neutral-700 text-white"
+          ? "bg-foreground rounded-lg w-full p-3 border-neutral-700 text-background  "
+          : "p-3 w-full bg-background border border-card-foreground text-card-foreground rounded-lg"
       }
     >
       {btnText}

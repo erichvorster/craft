@@ -126,27 +126,27 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
 
           {food && (
             <>
-              <div className="mx-auto w-24 h-1 flex-shrink-0 rounded-full bg-zinc-300 absolute left-1/2 transform -translate-x-1/2 z-50 top-5" />
+              <div className="mx-auto w-24 h-1 flex-shrink-0 rounded-full bg-card-foreground absolute left-1/2 transform -translate-x-1/2 z-50 top-5" />
               <div>
                 <div className="">
-                  <div className="h-[400px] w-full mx-auto relative rounded-lg">
+                  <div className="h-[340px] w-[340px] mx-auto relative rounded-lg mt-12">
                     <Image
                       src={img}
                       alt="beer"
                       layout="fill"
                       objectFit="cover"
-                      className="mx-auto rounded-tl-lg rounded-tr-lg"
+                      className="mx-auto rounded-lg"
                     />
                   </div>
                   <div className="px-8 text-foreground mt-10">
-                    <div className="text-xl font-bold m-0 mb-2 ">
+                    <div className="text-3xl font-bold m-0 mb-2 ">
                       {food.name}
                     </div>
                     <div className="mt-4">
-                      <p className="font-bold mb-1">Description</p>
-                      <p>{food.description}</p>
+                      <p className="font-bold mb-1 text-card">Description</p>
+                      <p className="text-card-foreground">{food.description}</p>
                     </div>
-                    <div className="bg-yellow-500/75 inline-block py-2 px-8 rounded-full font-bold mt-5">
+                    <div className="bg-popover-foreground text-popover inline-block py-2 px-8 rounded-full mt-5">
                       R{food.fixedPrice.price}
                     </div>
                   </div>
