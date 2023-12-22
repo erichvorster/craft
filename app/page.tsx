@@ -153,7 +153,7 @@ export default function Home() {
                   </div>
 
                   {/* <ActionButton /> */}
-                  {/* <Carousel images={popularImages} type="Event" /> */}
+                  <Carousel images={popularImages} type="Event" />
                 </>
               )}
 

@@ -53,7 +53,7 @@ const Carousel = ({ images, type }: CarouselProps) => {
 
   return (
     <div className=" mb-24 -z-20 ">
-      <div className="bg-white py-8">
+      <div className="bg-background py-8">
         <div className="pl-1 pb-2">
           <CategoryHeader
             headerText="Popular Menu Items"
@@ -77,24 +77,27 @@ const Carousel = ({ images, type }: CarouselProps) => {
                   <div className="flex flex-col">
                     <motion.div
                       key={index}
-                      className="min-w-[16rem] min-h-[16rem]  m-1 z-40 relative  pb-2  "
+                      className="min-w-[16rem] min-h-[16rem] mr-2 z-40 relative  pb-2"
                     >
                       <Image
                         src={img}
                         alt="burger"
-                        className="-z-30"
+                        className="-z-30 rounded-lg"
                         layout="fill"
                         style={{
                           pointerEvents: "none",
                         }}
                       />
                     </motion.div>
-                    <div className="p-2">
-                      <div>
-                        <h6 className="text-lg font-bold tracking-wide">
+                    <div>
+                      <div className="pt-2">
+                        <h5 className="text-md tracking-wide textt-foreground">
                           Bacon Burger
-                        </h6>
-                        <p className="text-lg  text-yellow-500/75">R90</p>
+                        </h5>
+                        <h5 className="text-sm text-card-foreground">Brunch</h5>
+                        <p className="text-md text-black mt-1 text-popover bg-popover-foreground inline-block py-[1px] px-3 rounded-full">
+                          R 120
+                        </p>
                       </div>
                     </div>
                   </div>

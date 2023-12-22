@@ -7,6 +7,8 @@ import { Drawer } from "vaul";
 import Image, { StaticImageData } from "next/image";
 import BeerImg from "../public/beer.png";
 import { Skeleton } from "./ui/skeleton";
+import { ScrollArea } from "./ui/scroll-area";
+import { Scroll } from "lucide-react";
 ////////////////Fix any
 type ItemDrawerProps = {
   children: React.ReactNode;
@@ -46,7 +48,7 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
         <Drawer.Content className="bg-background text-zinc-200 flex flex-col rounded-t-[10px] h-[96%]  fixed bottom-0 left-0 right-0 z-40">
           {beer && (
             <>
-              <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-300 mb-4 mt-4" />
+              <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-300 mb-2 mt-4" />
               <div>
                 <div className="">
                   <div className="">
@@ -126,32 +128,36 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
 
           {food && (
             <>
-              <div className="mx-auto w-24 h-1 flex-shrink-0 rounded-full bg-card-foreground absolute left-1/2 transform -translate-x-1/2 z-50 top-5" />
-              <div>
-                <div className="">
-                  <div className="h-[340px] w-[340px] mx-auto relative rounded-lg mt-12">
-                    <Image
-                      src={img}
-                      alt="beer"
-                      layout="fill"
-                      objectFit="cover"
-                      className="mx-auto rounded-lg"
-                    />
-                  </div>
-                  <div className="px-8 text-foreground mt-10">
-                    <div className="text-3xl font-bold m-0 mb-2 ">
-                      {food.name}
+              <div className="mx-auto w-24 h-1 flex-shrink-0 rounded-full bg-card-foreground absolute left-1/2 transform -translate-x-1/2 z-50 top-4" />
+              <ScrollArea>
+                <div>
+                  <div className="">
+                    <div className="h-[340px] w-auto relative rounded-lg mt-10 mx-2">
+                      <Image
+                        src={img}
+                        alt="beer"
+                        layout="fill"
+                        objectFit="cover"
+                        className="mx-auto rounded-lg"
+                      />
                     </div>
-                    <div className="mt-4">
-                      <p className="font-bold mb-1 text-card">Description</p>
-                      <p className="text-card-foreground">{food.description}</p>
-                    </div>
-                    <div className="bg-popover-foreground text-popover inline-block py-2 px-8 rounded-full mt-5">
-                      R{food.fixedPrice.price}
+                    <div className="px-6 text-foreground mt-10">
+                      <div className="text-3xl font-bold m-0 mb-2 ">
+                        {food.name}
+                      </div>
+                      <div className="mt-4">
+                        <p className="font-bold mb-1 text-card">Description</p>
+                        <p className="text-card-foreground">
+                          {food.description}
+                        </p>
+                      </div>
+                      <div className="bg-popover-foreground text-popover inline-block py-2 px-8 rounded-full mt-5">
+                        R{food.fixedPrice.price}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </ScrollArea>
             </>
           )}
         </Drawer.Content>
