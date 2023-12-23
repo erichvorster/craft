@@ -11,7 +11,7 @@ type ItemCardProps = {
 };
 
 const ItemCard = ({ img, food }: ItemCardProps) => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <div className="flex flex-col h-full rounded mb-4">
@@ -24,15 +24,14 @@ const ItemCard = ({ img, food }: ItemCardProps) => {
           <Image src={newItem} height={20} width={25} alt="new item icon" />
         </div> */}
         <div className="h-[200px] w-auto rounded-lg">
-          {isLoading && <Skeleton />}
+          {!imageLoaded && <Skeleton />}
           <Image
             src={img}
             layout="fill"
             objectFit="cover"
             alt="food item"
-            className={`rounded-lg ${isLoading ? "hidden" : ""}`}
-            onLoadingComplete={() => setIsLoading(false)}
-            onError={() => setIsLoading(false)}
+            className="rounded-lg"
+            onLoadingComplete={() => setImageLoaded(true)}
           />
         </div>
       </div>
