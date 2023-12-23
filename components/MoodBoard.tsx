@@ -1,17 +1,42 @@
-import React from "react";
+import React, { useState } from "react";
+import Link from "next/link";
 import { useTabsContext } from "../components/context/TabsContext";
 import { usePageContext } from "./context/PageContext";
-import Link from "next/link";
-import { foodTabs, drinkTabs } from "./Helpers";
+import { foodTabs } from "./Helpers";
 
-const MoodBoard = () => {
-  const { activePage, setActivePage } = usePageContext();
-  const { activeTab, setActiveTab } = useTabsContext();
+type TouchPosition = {
+  x: number;
+  y: number;
+} | null;
 
-  const toggleMenuItem = (page: number, tab: number) => {
-    setActivePage(page);
-    setActiveTab(tab);
-    window.scrollTo(0, 0);
+const MoodBoard: React.FC = () => {
+  const { setActivePage } = usePageContext();
+  const { setActiveTab } = useTabsContext();
+  const [touchStart, setTouchStart] = useState<TouchPosition>(null);
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStart({ x: e.touches[0].clientX, y: e.touches[0].clientY });
+  };
+
+  const handleTouchEnd = (
+    page: number,
+    tab: number,
+    e: React.TouchEvent<HTMLDivElement>
+  ) => {
+    if (touchStart) {
+      const touchEnd = {
+        x: e.changedTouches[0].clientX,
+        y: e.changedTouches[0].clientY,
+      };
+      if (
+        Math.abs(touchStart.x - touchEnd.x) < 10 &&
+        Math.abs(touchStart.y - touchEnd.y) < 10
+      ) {
+        setActivePage(page);
+        setActiveTab(tab);
+        window.scrollTo(0, 0);
+      }
+    }
   };
 
   return (
@@ -21,13 +46,12 @@ const MoodBoard = () => {
       </h5>
       <div className="flex flex-wrap">
         {foodTabs.map((tab, index) => (
-          <Link
-            href="/"
-            onTouchStart={() => {
-              toggleMenuItem(1, index + 1);
-            }}
-          >
-            <div className="px-4 py-2 mr-2 mt-2 bg-popover text-background rounded-full">
+          <Link href="/" key={index}>
+            <div
+              className="px-4 py-2 mr-2 mt-2 bg-popover text-background rounded-full"
+              onTouchStart={handleTouchStart}
+              onTouchEnd={(e) => handleTouchEnd(1, index + 1, e)}
+            >
               <p className="text-lg">{tab}</p>
             </div>
           </Link>
