@@ -24,7 +24,7 @@ const ItemCard = ({ img, food }: ItemCardProps) => {
           <Image src={newItem} height={20} width={25} alt="new item icon" />
         </div> */}
         <div className="h-[200px] w-auto rounded-lg">
-          {!imageLoaded && <Skeleton />}
+          {!imageLoaded && <Skeleton className="h-[200px] w-auto" />}
           <Image
             src={img}
             layout="fill"
