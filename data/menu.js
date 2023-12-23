@@ -3162,6 +3162,110 @@ let MenuItems = {
         },
       ],
     },
+    popularItems: {
+      displayName: "Salads",
+      description: null,
+      items: [
+        {
+          id: 24,
+          name: "The Original Cobb",
+          description:
+            "The classic American garden salad made from chopped salad greens, tomato, bacon smokedchicken breast, hard-boiled egg, avocado, spring onion , Roquefort (Blue) cheese, and served with a blue cheese vinaigrette.",
+          fixedPrice: {
+            size: "null",
+            price: 110,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 25,
+          name: "Falafel Rainbow Bowl",
+          description:
+            "An explosion of colour!! 6 Crunchy sweetcorn and chickpea falafel balls served with an array of carrots, tomato salsa, beetroot crisps, guacamole, sesame mayo and steamed sweetcorn.",
+          fixedPrice: {
+            size: "null",
+            price: 100,
+          },
+          isHot: false,
+          isVegan: true,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 26,
+          name: "Smoked Chicken Salad",
+          description:
+            "Black pepper and sea salt crusted smoked chicken breast served with fresh seasonal fruit slices on salad greens, cucumber, spring onions & celery, topped with our home-made vinaigrette and crushed walnuts.",
+          fixedPrice: {
+            size: "null",
+            price: 120,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 27,
+          name: "Biltong & Avo Salad",
+          description:
+            "Salad greens, cucumber, spring onions & celery topped in our home-made vinaigrette with biltong, avo, walnuts and feta. An old fashioned delight.",
+          fixedPrice: {
+            size: "null",
+            price: 135,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 27,
+          name: "Biltong & Avo Salad",
+          description:
+            "Salad greens, cucumber, spring onions & celery topped in our home-made vinaigrette with biltong, avo, walnuts and feta. An old fashioned delight.",
+          fixedPrice: {
+            size: "null",
+            price: 135,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 28,
+          name: "Haloumi Fries",
+          description:
+            "Our famous smoked pull pork placed on a bed of haloumi fries topped off with fresh guacamole and a tomato salsa. Tossed in BBQ or Chipotle sprinkled with sesame seeds. ",
+          fixedPrice: {
+            size: "null",
+            price: 140,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+        {
+          id: 29,
+          name: "Ruby Brisket Bowl",
+          description:
+            "All-day smoked brisket, crispy fried potatoes, beetroot coleslaw and fresh rocket.",
+          fixedPrice: {
+            size: "null",
+            price: 140,
+          },
+          isHot: false,
+          isVegan: false,
+          isAvailable: true,
+          isNew: false,
+        },
+      ],
+    },
   },
 };
 

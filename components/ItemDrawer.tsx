@@ -7,7 +7,6 @@ import { Drawer } from "vaul";
 import Image, { StaticImageData } from "next/image";
 import BeerImg from "../public/beer.png";
 import { Skeleton } from "./ui/skeleton";
-import { ScrollArea } from "./ui/scroll-area";
 import { Scroll } from "lucide-react";
 ////////////////Fix any
 type ItemDrawerProps = {
@@ -129,35 +128,32 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
           {food && (
             <>
               <div className="mx-auto w-24 h-1 flex-shrink-0 rounded-full bg-card-foreground absolute left-1/2 transform -translate-x-1/2 z-50 top-4" />
-              <ScrollArea>
-                <div>
-                  <div className="">
-                    <div className="h-[340px] w-auto relative rounded-lg mt-10 mx-2">
-                      <Image
-                        src={img}
-                        alt="beer"
-                        layout="fill"
-                        objectFit="cover"
-                        className="mx-auto rounded-lg"
-                      />
+
+              <div>
+                <div className="">
+                  <div className="h-[340px] w-auto relative rounded-lg mt-10 mx-2">
+                    <Image
+                      src={img}
+                      alt="beer"
+                      layout="fill"
+                      objectFit="cover"
+                      className="mx-auto rounded-lg"
+                    />
+                  </div>
+                  <div className="px-6 text-foreground mt-10">
+                    <div className="text-3xl font-bold m-0 mb-2 ">
+                      {food.name}
                     </div>
-                    <div className="px-6 text-foreground mt-10">
-                      <div className="text-3xl font-bold m-0 mb-2 ">
-                        {food.name}
-                      </div>
-                      <div className="mt-4">
-                        <p className="font-bold mb-1 text-card">Description</p>
-                        <p className="text-card-foreground">
-                          {food.description}
-                        </p>
-                      </div>
-                      <div className="bg-popover-foreground text-popover inline-block py-2 px-8 rounded-full mt-5">
-                        R{food.fixedPrice.price}
-                      </div>
+                    <div className="mt-4">
+                      <p className="font-bold mb-1 text-card">Description</p>
+                      <p className="text-card-foreground">{food.description}</p>
+                    </div>
+                    <div className="bg-popover-foreground text-popover inline-block py-2 px-8 rounded-full mt-5">
+                      R{food.fixedPrice.price}
                     </div>
                   </div>
                 </div>
-              </ScrollArea>
+              </div>
             </>
           )}
         </Drawer.Content>

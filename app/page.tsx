@@ -24,6 +24,7 @@ import Burgers from "@/components/Burgers";
 import { Button } from "@/components/ui/button";
 import Cap from "../public/cap.jpg";
 import Btn from "@/components/Btn";
+import MoodBoard from "@/components/MoodBoard";
 
 import { useIsFoodContext } from "@/components/context/IsFoodContext";
 import { useTabsContext } from "@/components/context/TabsContext";
@@ -153,6 +154,7 @@ export default function Home() {
                   </div>
 
                   {/* <ActionButton /> */}
+                  <MoodBoard />
                   <Carousel images={popularImages} type="Event" />
                 </>
               )}
