@@ -6,23 +6,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Separator } from "./ui/separator";
+import { foodTabs, drinkTabs } from "./Helpers";
 
 const Footer = () => {
-  const foodTabs = [
-    "All",
-    "Brunch",
-    "Snacks",
-    "Bowls & Salads",
-    "Sandwhiches Dogs & Lighter Meals",
-    "Burgers",
-    "Wings",
-    "Ribs",
-    "Steak",
-    "Desert",
-    "Kidies",
-  ];
-
-  const drinkTabs = ["All", "Beer", "Gin", "Whiskey", "Wines", "Shooters"];
   return (
     <>
       <div className=" bg-background mt-28 px-6 pt-12 pb-6 pb-24 border-t border-popover">
