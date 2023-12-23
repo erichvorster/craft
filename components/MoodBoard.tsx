@@ -2,6 +2,7 @@ import React from "react";
 import { useTabsContext } from "../components/context/TabsContext";
 import { usePageContext } from "./context/PageContext";
 import Link from "next/link";
+import { foodTabs, drinkTabs } from "./Helpers";
 
 const MoodBoard = () => {
   const { activePage, setActivePage } = usePageContext();
@@ -10,22 +11,8 @@ const MoodBoard = () => {
   const toggleMenuItem = (page: number, tab: number) => {
     setActivePage(page);
     setActiveTab(tab);
+    window.scrollTo(0, 0);
   };
-  const foodTabs = [
-    "All",
-    "Brunch",
-    "Snacks",
-    "Bowls & Salads",
-    "Burgers",
-    "Wings",
-    "Ribs",
-    "Steak",
-    "Desert",
-    "Kidies",
-    "Sandwhiches Dogs & Lighter Meals",
-  ];
-
-  const drinkTabs = ["All", "Beer", "Gin", "Whiskey", "Wines", "Shooters"];
 
   return (
     <div className="mb-24">

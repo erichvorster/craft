@@ -11,6 +11,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Separator } from "./ui/separator";
+import { foodTabs, drinkTabs } from "./Helpers";
 import { useTabsContext } from "../components/context/TabsContext";
 import { usePageContext } from "./context/PageContext";
 import Btn from "./Btn";
@@ -19,22 +20,6 @@ const Nav = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const { activePage, setActivePage } = usePageContext();
   const { activeTab, setActiveTab } = useTabsContext();
-
-  const foodTabs = [
-    "All",
-    "Brunch",
-    "Snacks",
-    "Bowls & Salads",
-    "Sandwhiches Dogs & Lighter Meals",
-    "Burgers",
-    "Wings",
-    "Ribs",
-    "Steak",
-    "Desert",
-    "Kidies",
-  ];
-
-  const drinkTabs = ["All", "Beer", "Gin", "Whiskey", "Wines", "Shooters"];
 
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);

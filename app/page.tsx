@@ -29,6 +29,7 @@ import MoodBoard from "@/components/MoodBoard";
 import { useIsFoodContext } from "@/components/context/IsFoodContext";
 import { useTabsContext } from "@/components/context/TabsContext";
 import { usePageContext } from "@/components/context/PageContext";
+import { foodTabs, drinkTabs } from "@/components/Helpers";
 
 export default function Home() {
   const [scrolledToTop, setScrolledToTop] = useState(true);
@@ -37,22 +38,7 @@ export default function Home() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const { isFood, setIsFood } = useIsFoodContext();
 
-  const foodTabs = [
-    "All",
-    "Brunch",
-    "Snacks",
-    "Bowls & Salads",
-    "Sandwhiches Dogs & Lighter Meals",
-    "Burgers",
-    "Wings",
-    "Ribs",
-    "Steak",
-    "Desert",
-    "Kidies",
-  ];
-
   const tabs = ["Food", "Drinks"];
-  const drinkTabs = ["All", "Beer", "Gin", "Whiskey", "Wines", "Shooters"];
 
   useEffect(() => {
     const handleScroll = () => {
