@@ -3,11 +3,23 @@
 import { useState } from "react";
 
 import { Children } from "react";
-import { Drawer } from "vaul";
+// import { Drawer } from "vaul";
 import Image, { StaticImageData } from "next/image";
 import BeerImg from "../public/beer.png";
 import { Skeleton } from "./ui/skeleton";
 import { Scroll } from "lucide-react";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+  DrawerFooter,
+} from "@/components/ui/drawer";
+import Btn from "./Btn";
+
 ////////////////Fix any
 type ItemDrawerProps = {
   children: React.ReactNode;
@@ -37,14 +49,13 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
   };
 
   return (
-    <Drawer.Root shouldScaleBackground>
-      <Drawer.Trigger asChild>
+    <Drawer>
+      <DrawerTrigger asChild className="text-left">
         <div>{children}</div>
-      </Drawer.Trigger>
+      </DrawerTrigger>
 
-      <Drawer.Portal>
-        <Drawer.Overlay className="fixed inset-0 bg-black/40" />
-        <Drawer.Content className="bg-background text-zinc-200 flex flex-col rounded-t-[10px] h-[96%]  fixed bottom-0 left-0 right-0 z-40">
+      <DrawerContent>
+        <DrawerHeader>
           {beer && (
             <>
               <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-300 mb-2 mt-4" />
@@ -131,7 +142,7 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
 
               <div>
                 <div className="">
-                  <div className="h-[340px] w-auto relative rounded-lg mt-10 mx-2">
+                  <div className="h-[250px] w-[250px] mx-auto relative rounded-lg mt-10 ">
                     <Image
                       src={img}
                       alt="beer"
@@ -156,8 +167,13 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
               </div>
             </>
           )}
-        </Drawer.Content>
-      </Drawer.Portal>
-    </Drawer.Root>
+        </DrawerHeader>
+        <DrawerFooter>
+          <DrawerClose>
+            <Btn btnText="Close" type="light" />
+          </DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
   );
 }

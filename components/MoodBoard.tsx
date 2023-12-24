@@ -48,11 +48,11 @@ const MoodBoard: React.FC = () => {
         {foodTabs.map((tab, index) => (
           <Link href="/" key={index}>
             <div
-              className="px-4 py-2 mr-2 mt-2 bg-popover text-background rounded-full"
+              className="px-4 py-2 mr-2 mt-2 bg-popover-foreground text-popover rounded-full"
               onTouchStart={handleTouchStart}
               onTouchEnd={(e) => handleTouchEnd(1, index + 1, e)}
             >
-              <p className="text-lg">{tab}</p>
+              <p>{tab}</p>
             </div>
           </Link>
         ))}

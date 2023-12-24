@@ -21,6 +21,13 @@ const Beer = () => {
     beers.push(i);
   }
 
+  function truncateProducerName(producer: string) {
+    const maxLength = 10; // maximum characters you want to display
+    return producer.length > maxLength
+      ? producer.substring(0, maxLength) + "..."
+      : producer;
+  }
+
   return (
     <>
       <div className="mt-20">
@@ -30,9 +37,12 @@ const Beer = () => {
         />
         {MenuItems.drinks.iceColdBeer.items.map((beer, idx) => (
           <ItemDrawer beer={beer}>
-            <p className="py-1  text-sm">
+            <p className="py-1 text-sm">
               <span className="mr-3">{beer.id}</span>
-              {beer.producer} - <strong> {beer.name}</strong>
+              <span className="no-wrap-ellipsis">
+                {truncateProducerName(beer.producer)}
+              </span>{" "}
+              - <strong>{beer.name}</strong>
               <span className="ml-2"> - {beer.alcoholPercentage}%</span>
             </p>
           </ItemDrawer>
@@ -46,9 +56,12 @@ const Beer = () => {
         />
         {MenuItems.drinks.floatingBeer.items.map((beer, idx) => (
           <ItemDrawer beer={beer}>
-            <p className="py-1  text-sm">
+            <p className="py-1 text-sm">
               <span className="mr-3">{beer.id}</span>
-              {beer.producer} - <strong> {beer.name}</strong>
+              <span className="no-wrap-ellipsis">
+                {truncateProducerName(beer.producer)}
+              </span>{" "}
+              - <strong>{beer.name}</strong>
               <span className="ml-2"> - {beer.alcoholPercentage}%</span>
             </p>
           </ItemDrawer>

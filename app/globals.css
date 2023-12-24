@@ -30,7 +30,7 @@ a {
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
  
-    --muted: 210 40% 96.1%;
+    --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215.4 16.3% 46.9%;
  
     --accent: 240 1.5% 7.3%;;
@@ -186,4 +186,12 @@ body{
 
 .-rotate-45 {
   transform: rotate(45deg);
+}
+
+.no-wrap-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+ /* or inline-block, depending on layout */
+  max-width: 200px; /* adjust as needed */
 }
