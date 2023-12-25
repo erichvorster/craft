@@ -8,6 +8,7 @@ import Image, { StaticImageData } from "next/image";
 import BeerImg from "../public/beer.png";
 import { Skeleton } from "./ui/skeleton";
 import { Scroll } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import {
   Drawer,
   DrawerClose,
@@ -139,8 +140,8 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
           {food && (
             <>
               <div>
-                <div className="overflow-y-scroll">
-                  <div className="h-[250px] w-[250px] mx-auto relative rounded-lg mt-3 ">
+                <div>
+                  <div className="h-[220px] w-[250px] mx-auto relative rounded-lg mt-10">
                     <Image
                       src={img}
                       alt="beer"
@@ -149,8 +150,8 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
                       className="mx-auto rounded-lg"
                     />
                   </div>
-                  <div className="px-6 text-foreground mt-6">
-                    <div className="text-3xl font-bold m-0 mb-2 ">
+                  <div className="px-4 text-foreground mt-6">
+                    <div className="text-2xl font-bold m-0 mb-2 ">
                       {food.name}
                     </div>
                     <div className="mt-4">
@@ -169,8 +170,10 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
           )}
         </DrawerHeader>
 
-        <DrawerClose className="absolute w-11/12 bottom-5 mx-auto">
-          <Btn btnText="Close" type="light" />
+        <DrawerClose className="absolute  top-8 left-5 mx-auto">
+          <div className="flex items-center text-popover">
+            <ChevronLeft className="text-popover" /> Menu
+          </div>
         </DrawerClose>
       </DrawerContent>
     </Drawer>
