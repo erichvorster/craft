@@ -15,20 +15,28 @@ import { foodTabs, drinkTabs } from "./Helpers";
 import { useTabsContext } from "../components/context/TabsContext";
 import { usePageContext } from "./context/PageContext";
 import Btn from "./Btn";
+import { TouchEvent } from "react";
 
 const Nav = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const { activePage, setActivePage } = usePageContext();
   const { activeTab, setActiveTab } = useTabsContext();
 
-  const toggleMenu = () => {
+  const toggleMenu = (e: TouchEvent<HTMLParagraphElement> | undefined) => {
+    e?.preventDefault();
     setMenuOpen(!isMenuOpen);
   };
 
-  const toggleMenuItem = (page: number, tab: number) => {
+  const toggleMenuItem = (
+    page: number,
+    tab: number,
+    e?: TouchEvent<HTMLParagraphElement> | undefined
+  ) => {
+    //@ts-ignore
+    e.preventDefault();
     setActivePage(page);
     setActiveTab(tab);
-    toggleMenu();
+    toggleMenu(e);
   };
 
   return (
@@ -96,14 +104,14 @@ const Nav = () => {
                   </AccordionTrigger>
                   <AccordionContent>
                     {foodTabs.map((tab, index) => (
-                      <Link
-                        href="/"
-                        onTouchStart={() => {
-                          toggleMenuItem(1, index + 1);
-                        }}
-                      >
+                      <Link href="/">
                         <div className="flex flex-col ">
-                          <p className="text-sm py-2 pl-3 text-card-foreground">
+                          <p
+                            className="text-sm py-2 pl-3 text-card-foreground"
+                            onTouchStart={(e) => {
+                              toggleMenuItem(1, index + 1, e);
+                            }}
+                          >
                             {tab}
                           </p>
                         </div>
@@ -115,14 +123,14 @@ const Nav = () => {
                   <AccordionTrigger>Drinks</AccordionTrigger>
                   <AccordionContent>
                     {drinkTabs.map((tab, index) => (
-                      <Link
-                        href="/"
-                        onTouchStart={() => {
-                          toggleMenuItem(2, index + 1);
-                        }}
-                      >
+                      <Link href="/">
                         <div className="flex flex-col ">
-                          <p className="text-sm py-2 pl-3 text-card-foreground">
+                          <p
+                            className="text-sm py-2 pl-3 text-card-foreground"
+                            onTouchStart={(e) => {
+                              toggleMenuItem(2, index + 1, e);
+                            }}
+                          >
                             {tab}
                           </p>
                         </div>
@@ -131,20 +139,21 @@ const Nav = () => {
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
-
-              <Link href="/Events" onTouchStart={() => toggleMenu()}>
+              <Link href="/Events">
                 <p
                   className=" text-white
-          py-4"
+                  py-4"
+                  onTouchStart={(e) => toggleMenu(e)}
                 >
                   Events
                 </p>
                 <Separator className="bg-card-foreground" />
               </Link>
-              <Link href="/Bookings" onTouchStart={() => toggleMenu()}>
+              <Link href="/Bookings">
                 <p
                   className=" text-white
           py-4"
+                  onTouchStart={(e) => toggleMenu(e)}
                 >
                   Bookings
                 </p>

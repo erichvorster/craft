@@ -55,7 +55,7 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
       </DrawerTrigger>
 
       <DrawerContent>
-        <DrawerHeader>
+        <DrawerHeader className="relative">
           {beer && (
             <>
               <div className="mx-auto w-12 h-1.5 flex-shrink-0 rounded-full bg-zinc-300 mb-2 mt-4" />
@@ -138,11 +138,9 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
 
           {food && (
             <>
-              <div className="mx-auto w-24 h-1 flex-shrink-0 rounded-full bg-card-foreground absolute left-1/2 transform -translate-x-1/2 z-50 top-4" />
-
               <div>
-                <div className="">
-                  <div className="h-[250px] w-[250px] mx-auto relative rounded-lg mt-10 ">
+                <div className="overflow-y-scroll">
+                  <div className="h-[250px] w-[250px] mx-auto relative rounded-lg mt-3 ">
                     <Image
                       src={img}
                       alt="beer"
@@ -151,13 +149,15 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
                       className="mx-auto rounded-lg"
                     />
                   </div>
-                  <div className="px-6 text-foreground mt-10">
+                  <div className="px-6 text-foreground mt-6">
                     <div className="text-3xl font-bold m-0 mb-2 ">
                       {food.name}
                     </div>
                     <div className="mt-4">
                       <p className="font-bold mb-1 text-card">Description</p>
-                      <p className="text-card-foreground">{food.description}</p>
+                      <p className="text-card-foreground text-sm">
+                        {food.description}s
+                      </p>
                     </div>
                     <div className="bg-popover-foreground text-popover inline-block py-2 px-8 rounded-full mt-5">
                       R{food.fixedPrice.price}
@@ -168,11 +168,10 @@ export function ItemDrawer({ children, img, beer, food }: ItemDrawerProps) {
             </>
           )}
         </DrawerHeader>
-        <DrawerFooter>
-          <DrawerClose>
-            <Btn btnText="Close" type="light" />
-          </DrawerClose>
-        </DrawerFooter>
+
+        <DrawerClose className="absolute w-11/12 bottom-5 mx-auto">
+          <Btn btnText="Close" type="light" />
+        </DrawerClose>
       </DrawerContent>
     </Drawer>
   );
