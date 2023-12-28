@@ -88,7 +88,9 @@ const Nav = () => {
               />
             </header>
             <div className="mt-10">
-              <Btn btnText="Sign up" type="light" />
+              <Link href="/SignUp">
+                <Btn btnText="Sign up" type="light" />
+              </Link>
               <div className="mt-4" />
               <Btn btnText="Login" type="dark" />
             </div>

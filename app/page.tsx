@@ -30,6 +30,7 @@ import { useIsFoodContext } from "@/components/context/IsFoodContext";
 import { useTabsContext } from "@/components/context/TabsContext";
 import { usePageContext } from "@/components/context/PageContext";
 import { foodTabs, drinkTabs } from "@/components/Helpers";
+import QuickActions from "@/components/QuickActions";
 
 export default function Home() {
   const [scrolledToTop, setScrolledToTop] = useState(true);
@@ -131,15 +132,16 @@ export default function Home() {
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Commodi, perspiciatis?
                     </p>
-                    <div className="mt-8">
+                    {/* <div className="mt-8">
                       <Image src={Cap} alt="cap" className="rounded-lg" />
-                    </div>
+                    </div> */}
                     {/* <div className="mt-12">
                       <Btn btnText="Login" type="dark" />
                     </div> */}
                   </div>
 
                   {/* <ActionButton /> */}
+                  <QuickActions />
                   <MoodBoard />
                   <Carousel images={popularImages} type="Event" />
                 </>
