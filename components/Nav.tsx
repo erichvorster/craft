@@ -36,7 +36,6 @@ const Nav = () => {
     e.preventDefault();
     setActivePage(page);
     setActiveTab(tab);
-    toggleMenu(e);
   };
 
   return (
@@ -53,7 +52,7 @@ const Nav = () => {
           />
         </header>
         <div
-          className="burger-menu cursor-pointer p-4 z-50 relative mr-4 rounded-full border border-card-foreground"
+          className="burger-menu cursor-pointer p-4 z-50 relative mr-4 rounded-full border border-card"
           onTouchStart={toggleMenu}
         >
           <div
@@ -110,8 +109,8 @@ const Nav = () => {
                         <div className="flex flex-col ">
                           <p
                             className="text-sm py-2 pl-3 text-card-foreground"
-                            onTouchStart={(e) => {
-                              toggleMenuItem(1, index + 1, e);
+                            onClick={(e) => {
+                              toggleMenuItem(1, index + 1);
                             }}
                           >
                             {tab}
@@ -145,7 +144,6 @@ const Nav = () => {
                 <p
                   className=" text-white
                   py-4"
-                  onTouchStart={(e) => toggleMenu(e)}
                 >
                   Events
                 </p>
@@ -155,7 +153,6 @@ const Nav = () => {
                 <p
                   className=" text-white
           py-4"
-                  onTouchStart={(e) => toggleMenu(e)}
                 >
                   Bookings
                 </p>
