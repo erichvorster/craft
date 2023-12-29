@@ -16,11 +16,11 @@ const page = () => {
         Events
       </h2>
       <div className="pt-6">
-        <h4 className="font-bold text-neutral-400 mb-2 ml-2">MARCH</h4>
-        <div className="bg-foreground grid grid-cols-3 rounded-lg px-8 py-6">
+        <h4 className="font-bold text-foreground mb-2 ml-2">MARCH</h4>
+        <div className="bg-card-foreground grid grid-cols-3 rounded-lg px-8 py-6">
           <div className="col-span-1">
-            <h5 className="text-5xl font-bold text-white">20</h5>
-            <p className="text-white text-sm">MARCH</p>
+            <h5 className="text-5xl font-bold text-foreground">20</h5>
+            <p className="text-foreground text-sm">MARCH</p>
           </div>
           <div className="col-span-2">
             <p className="text-lg text-white font-bold">Cheese Festival</p>

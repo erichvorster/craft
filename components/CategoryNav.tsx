@@ -110,7 +110,7 @@ const CategoryNav = ({
             onTouchStart={() => setActiveTab(index + 1)}
             className={`${
               activeTab === index + 1 && " "
-            } mr-2 px-4 py-[1px] rounded whitespace-nowrap cursor-pointer text-popover text-md relative`}
+            } mr-2 px-4 py-[2px] rounded whitespace-nowrap cursor-pointer text-popover text-md relative`}
           >
             {activeTab === index + 1 && (
               <motion.span
