@@ -36,6 +36,7 @@ const Nav = () => {
     e.preventDefault();
     setActivePage(page);
     setActiveTab(tab);
+    toggleMenu(e);
   };
 
   return (
@@ -105,18 +106,17 @@ const Nav = () => {
                   </AccordionTrigger>
                   <AccordionContent>
                     {foodTabs.map((tab, index) => (
-                      <Link href="/">
-                        <div className="flex flex-col ">
-                          <p
-                            className="text-sm py-2 pl-3 text-card-foreground"
-                            onClick={(e) => {
-                              toggleMenuItem(1, index + 1);
-                            }}
-                          >
-                            {tab}
-                          </p>
-                        </div>
-                      </Link>
+                      <div className="flex flex-col ">
+                        <p
+                          className="text-sm py-2 pl-3 text-card-foreground"
+                          onClick={(e) => {
+                            //@ts-ignore
+                            toggleMenuItem(1, index + 1, e);
+                          }}
+                        >
+                          {tab}
+                        </p>
+                      </div>
                     ))}
                   </AccordionContent>
                 </AccordionItem>
